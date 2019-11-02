@@ -1,6 +1,15 @@
                                 -----RESTAURANT APP-----
 
 
+1. User Inputs preferred ingredients / dishes
+2. Recipe API collects ingredients and suggests dishes
+3. Parse this into the Restaurant API's
+4. Determine appropriate restaurants
+5. print addresses
+
+
+
+
 BASIC FEATURES:
 Name of Restaurant
 Location
@@ -37,3 +46,12 @@ Backend:
 Daniel
 Brad
 Shing
+
+
+By 2/11/19 class:
+
+Brad - review restaurant API's report back on functionality in terms of objects
+Shing - review recipe API's report back on functionality in terms of objects
+Daniel - Review course requirements and ensure we are checking all requirements
+Marie - Basics of HTML to be completed.
+Mani - modals / media queries
