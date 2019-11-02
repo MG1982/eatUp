@@ -1,3 +1,6 @@
+
+
+
 /* Background Image */
 body {
     background: url(../../Images/beans.jpg) no-repeat center fixed;
@@ -17,6 +20,16 @@ h1 {
     margin: 20px;
     
 }
+.options {
+  margin: 20px;
+}
+.options:hover {
+  cursor: pointer;
+}
+.col {
+  margin: 10px;
+  border: solid 1px grey;
+}
 
 /* Footer */
 footer {
@@ -35,4 +48,5 @@ footer {
         border-radius: 1px;
         opacity: 0.7;
 }
+
 
