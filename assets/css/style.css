@@ -1,0 +1,10 @@
+.options {
+  margin: 20px;
+}
+.options:hover {
+  cursor: pointer;
+}
+.col {
+  margin: 10px;
+  border: solid 1px grey;
+}
