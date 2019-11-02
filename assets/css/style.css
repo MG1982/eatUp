@@ -1,3 +1,25 @@
+
+
+
+/* Background Image */
+body {
+    background: url(../../Images/beans.jpg) no-repeat center fixed;
+    background-size: 1700px 990px;
+    margin-bottom: 60px;
+    
+
+
+}
+
+/* Title of Website elements */
+h1 {
+    font-family: 'Cookie', cursive;
+    font-size: 120px;
+    color: rgb(46, 43, 44);
+    text-align: center;
+    margin: 20px;
+    
+}
 .options {
   margin: 20px;
 }
@@ -8,3 +30,23 @@
   margin: 10px;
   border: solid 1px grey;
 }
+
+/* Footer */
+footer {
+        padding: 15px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        text-align: center;
+        background: rgb(255, 255, 255);
+        text-align: center;
+        font-family: 'Didact Gothic', sans-serif;
+        border: solid 1px rgb(189, 189, 189);
+        border-radius: 1px;
+        opacity: 0.7;
+}
+
+
