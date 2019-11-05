@@ -33,7 +33,29 @@ h5 {
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin-top: 100px;
+  
+
+}
+
+#intro {
+    text-align: center;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+    color: black;
+    margin: 30px;
+    padding: 15px;
+    margin-top: 30px;
+    font-weight: 700;
+    font:bold;
+    width: 500px;
+    border: black 1.5px solid;
+    border-radius: 4px;
+    margin-left: 459px;
+    
 }
 
 .btn-primary {
@@ -44,13 +66,13 @@ h5 {
 
 /* Glow Effect for Button */
 
-/* .btn-primary::after{
+.btn-primary::after{
   content: '';
   position: absolute;
-  top: 250px;
+  top: 500px;
   left: 600px;
   right: 600px;
-  bottom: 350px;
+  bottom: 70px;
   background:#fff;
   z-index: -1;
   filter: blur(25px);
@@ -59,7 +81,7 @@ h5 {
 .btn-primary:before,
 .btn-primary::after {
     background:linear-gradient(110.1598456064869deg, rgba(0, 166, 190,1) 6.140625%,rgba(0, 226, 123,1) 95.51562499999999%) 
-  } */
+  }
 
 .options {
   margin: 20px;
