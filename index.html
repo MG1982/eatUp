@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
     <!-- Linking Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
     <!-- Linking normalize.css -->
-    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
 
     <!-- Linking style.css -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -43,6 +46,7 @@
 
 
 <!-- Intro - maybe -->
+
 <div id="intro">
 <h4>
   Are you feeling hungry, tired or lazy? <br> <br>We provide a fun site that can help you <br> choose your next meal if you're on the go <br> or feel like staying in. <br> <br> Click below to get started and see all the wonderful choices we can provide you!
@@ -50,34 +54,94 @@
 </div>
 
 <!-- On Page Load show "Get Started" Button -->
+
     <!-- WILL NEED .JS TO REMOVE BUTTON ON CLICK -->
     <div id="startButton">
     <button
       style="background-color:rgb(157, 221, 165)"
       type="button"
+      id="#get-started"
       class="btn btn-primary"
       data-toggle="modal"
-      data-target="#exampleModalCenter"
+      data-target="#first-option"
     >
       <h2>Get Started!</h2>
     </button>
-    </div>
-    <!-- First Selection Modal -->
+
+    <!-- First Option Modal -->
     <div
       class="modal fade"
-      id="exampleModalCenter"
+      id="first-option"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
+      aria-labelledby="firstOptionCenterTitle"
       aria-hidden="true"
+      data-backdrop="static"
     >
-      <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+      <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">
-              Select a Prefered Dish
+            <div class="col-12 modal-title text-center" id="first-option">
+              <span
+                ><h5>Cook or Order?</h5>
+                <!-- Modal close button -->
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button></span
+              >
+            </div>
+          </div>
+          <div class="modal-body text-center">
+            <div class="random-options">
+              <div class="row">
+                <div class="col">
+                  <div class="title">Recipe</div>
+                  <img
+                    id="end-choice"
+                    class="options"
+                    src="https://resizer.otstatic.com/v2/photos/medium/24162862.jpg"
+                    height="200px"
+                  />
+                </div>
+                <div class="col">
+                  <div class="title">Restaurant</div>
+                  <img
+                    id="end-choice"
+                    class="options"
+                    src="https://resizer.otstatic.com/v2/photos/medium/24162862.jpg"
+                    height="200px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Second Option Modal -->
+    <div
+      class="modal fade"
+      id="second-option"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="secondOptionCenterTitle"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="second-option">
+              <span id="timer">-- seconds</span> to Select a Prefered Dish
             </h5>
+            <!-- Modal close button -->
             <button
               type="button"
               class="close"
@@ -90,6 +154,40 @@
           <div class="modal-body text-center">
             <div class="random-options">
               <div class="row">
+                <div class="col">
+                  <div class="title">Sample Title</div>
+                  <img
+                    class="options"
+                    src="https://minimalistbaker.com/wp-content/uploads/2015/08/Fried-Rice-SQUARE.jpg"
+                    height="200px"
+                  />
+                </div>
+                <div class="col">
+                  <div class="title">Sample Title</div>
+                  <img
+                    class="options"
+                    src="https://bakingmischief.com/wp-content/uploads/2017/04/fettuccine-alfredo-for-one-image-square1.jpg"
+                    height="200px"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="title">Sample Title</div>
+                  <img
+                    class="options"
+                    src="https://d1doqjmisr497k.cloudfront.net/-/media/mccormick-us/recipes/lawrys/g/800/great-american-grilled-steak.jpg"
+                    height="200px"
+                  />
+                </div>
+                <div class="col">
+                  <div class="title">Sample Title</div>
+                  <img
+                    class="options"
+                    src="https://d1doqjmisr497k.cloudfront.net/-/media/mccormick-us/recipes/mccormick/b/800/bag-n-season-chicken.jpg"
+                    height="200px"
+                  />
+                </div>
                   <div class="col">
                     <div class="title">Sample Title</div>  
                     <img
@@ -122,37 +220,26 @@
       </div>
     </div>
 
-    <div class="modal-footer">
-      <div class="timer"></div>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/javascript/daniel.js"></script>
+  </body>
+
+  <footer>
+    <div class="container">
+      Brad, Daniel, Mani, Marie & Shing &copy;
     </div>
-  </div>
-  </div>
-  </div>
-  <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- Javascript file-->
-  <script language="javascript" type="text/javascript" src="daniel.js"></script>
-  <!-- Popper -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <!-- Bootstrap -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-
-
-
-</body>
-
-<!-- Footer  -->
-
-<footer>
-  <div class="container">
-    Brad, Daniel, Mani, Marie & Shing &copy;
-  </div>
-</footer>
-
-
-
+  </footer>
 </html>
