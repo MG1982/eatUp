@@ -2,32 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- Linking Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <!-- Linking Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Linking normalize.css -->
+    <link rel="stylesheet" href="./assets/css/normalize.css">
 
-  <!-- Linking normalize.css -->
-  <link rel="stylesheet" href="./assets/css/normalize.css">
+    <!-- Linking style.css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- Linking style.css -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Tab Icon -->
+    <link id= "icon" rel="icon" type="image/png" href="http://icons.iconarchive.com/icons/webalys/kameleon.pics/48/Food-Dome-icon.png">
 
+    <!-- Linking Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Amatic+SC|Cookie|Pathway+Gothic+One|Poiret+One|Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Didact+Gothic|Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 
+     
+   
+    <title>eatUP</title>
 
-  <!-- Linking Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One&display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css?family=Advent+Pro|Amatic+SC|Cookie|Pathway+Gothic+One|Poiret+One|Satisfy&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Anton|Didact+Gothic|Fjalla+One&display=swap" rel="stylesheet">
-
-
-
-  <title>Document</title>
 </head>
 
 <header>
@@ -39,32 +40,60 @@
 
 <body>
 
-  <!-- Intro -->
 
 
-  <!-- On Page Load show "Get Started" Button -->
-  <!-- WILL NEED .JS TO REMOVE BUTTON ON CLICK -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    <h2>Get Started!</h2>
-  </button>
+<!-- Intro - maybe -->
 
-  <!-- First Selection Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">
-            Select a Prefered Dish
-          </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body text-center">
-          <div class="random-options">
-            <div class="row">
+
+<!-- On Page Load show "Get Started" Button -->
+    <!-- WILL NEED .JS TO REMOVE BUTTON ON CLICK -->
+    <div id="startButton">
+    <button
+      style="background-color:rgb(157, 221, 165)"
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+    >
+      <h2>Get Started!</h2>
+    </button>
+    </div>
+    <!-- First Selection Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Select a Prefered Dish
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="random-options">
+              <div class="row">
+                  <div class="col">
+                    <div class="title">Sample Title</div>  
+                    <img
+                class="options"
+                src="https://minimalistbaker.com/wp-content/uploads/2015/08/Fried-Rice-SQUARE.jpg"
+                height="200px"
+              /></div>
+
               <div class="col">
                 <div id="title0"></div>
                 <img id="option0" height="200px" />
@@ -88,6 +117,7 @@
         </div>
       </div>
     </div>
+
     <div class="modal-footer">
       <div class="timer"></div>
     </div>
@@ -107,7 +137,11 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
+
+
 </body>
+
+<!-- Footer  -->
 
 <footer>
   <div class="container">
