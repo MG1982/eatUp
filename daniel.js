@@ -5,6 +5,10 @@ let query = "chicken";
 var queryURL =
     "https://www.food2fork.com/api/search?key=" +
     apiKey + "&q=" + query;
+let firstChoice;
+let secondChoice;
+let thirdChoice;
+let finalChoice;
 
 $.ajax({
     url: queryURL,
@@ -15,38 +19,30 @@ $.ajax({
     console.log(r.recipes)
     console.log(r.recipes[0].title)
 
-    // function tableCreator() {
-    //     table = $('<table>');
-    //     row = $('<tr>');
-    //     cell = $('<td>');
 
-
-    // }
-
-
-    for (i = 1; i < 5; i++) {
-        var meal = $('<div>');
-        meal.attr('id', 'image' + i);
-
-        // grab the well section and append to it
-        $('.images').append(meal);
-    }
-    imageTitle("#image1", r.recipes[0].image_url, r.recipes[0].social_rank);
-    imageTitle("#image2", r.recipes[1].image_url, r.recipes[1].social_rank);
-    imageTitle("#image3", r.recipes[2].image_url, r.recipes[2].social_rank);
-    imageTitle("#image4", r.recipes[3].image_url, r.recipes[3].social_rank);
+    imagePrinter()
 
 })
 
-function imageTitle(element, image, rating) {
-    $(element).html("<img src=" + image + ">")
+//function to set Attributes (image link + rating) 
+function imageAttributes(element, image, rating) {
+    $(element).attr("src", image)
     $(element).append("Recipe rating: " + rating)
 }
 
+//function placing attributes to each div
+function imagePrinter() {
+    for (i = 0; i < 4; i++) {
+        imageAttributes("#option" + i, r.recipes[i].image_url, r.recipes[i].social_rank);
+    }
+
+}
 
 function finalMeal() {
 
 }
+
+
 
 
 //onclick restaurant
