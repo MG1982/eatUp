@@ -1,25 +1,74 @@
-
-
-
 /* Background Image */
 body {
     background: url(../../Images/beans.jpg) no-repeat center fixed;
-    background-size: 1700px 990px;
+    background-size: 1700px 1000px;
     margin-bottom: 60px;
-    
-
+  
 
 }
 
 /* Title of Website elements */
 h1 {
     font-family: 'Cookie', cursive;
-    font-size: 120px;
+    font-size: 130px;
     color: rgb(46, 43, 44);
     text-align: center;
     margin: 20px;
+    letter-spacing: 2px;
+    
     
 }
+
+h2 {
+  padding: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  margin: 10px;
+  color: rgb(0, 0, 0);
+  
+
+}
+
+h5 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+}
+
+/* Buttons */
+#startButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  
+}
+
+.btn-primary {
+  border: none;
+  border: solid black 1.5px;
+  text-decoration: none;
+  
+}
+
+/* Glow Effect for Button */
+
+/* .btn-primary::after{
+  content: '';
+  position: absolute;
+  top: 250px;
+  left: 600px;
+  right: 600px;
+  bottom: 350px;
+  background:#fff;
+  z-index: -1;
+  filter: blur(25px);
+}
+
+.btn-primary:before,
+.btn-primary::after {
+    background:linear-gradient(110.1598456064869deg, rgba(0, 166, 190,1) 6.140625%,rgba(0, 226, 123,1) 95.51562499999999%) 
+  } */
+
 .options {
   margin: 20px;
 }
@@ -28,8 +77,18 @@ h1 {
 }
 .col {
   margin: 10px;
-  border: solid 1px grey;
+  border: solid 1px rgb(179, 175, 175);
+  border-radius: 3px;
 }
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  margin: 5px;
+  font-size: 24px;
+}
+
+
+
 
 /* Footer */
 footer {
