@@ -68,7 +68,7 @@
       <h2>Get Started!</h2>
     </button>
 
-    <!-- First Option Modal -->
+    <!-- First Modal (RECIPE OR RESTAURANT OPTION)  DONT DELETE THIS!-->
     <div
       class="modal fade"
       id="first-option"
@@ -124,7 +124,10 @@
         </div>
       </div>
     </div>
-    <!-- Second Option Modal -->
+     <!-- END OF FISRT MODAL (RECIPE OR RESTAURANT OPTION) -->
+
+    <!-- START OF SECOND MODAL - FROM HERE DOWN THE IMAGES AND INFO WILL BE GENERATED FROM APIs -->
+    <!-- THIS WILL BE THE FIRST 4 MEAL OPTIONS GENERATED -->
     <div
       class="modal fade"
       id="second-option"
@@ -153,49 +156,8 @@
           </div>
           <div class="modal-body text-center">
             <div class="random-options">
+              <!-- CONATINER AREA FOR API LINKS STARTS HERE -->
               <div class="row">
-                <div class="col">
-                  <div class="title">Sample Title</div>
-                  <img
-                    class="options"
-                    src="https://minimalistbaker.com/wp-content/uploads/2015/08/Fried-Rice-SQUARE.jpg"
-                    height="200px"
-                  />
-                </div>
-                <div class="col">
-                  <div class="title">Sample Title</div>
-                  <img
-                    class="options"
-                    src="https://bakingmischief.com/wp-content/uploads/2017/04/fettuccine-alfredo-for-one-image-square1.jpg"
-                    height="200px"
-                  />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="title">Sample Title</div>
-                  <img
-                    class="options"
-                    src="https://d1doqjmisr497k.cloudfront.net/-/media/mccormick-us/recipes/lawrys/g/800/great-american-grilled-steak.jpg"
-                    height="200px"
-                  />
-                </div>
-                <div class="col">
-                  <div class="title">Sample Title</div>
-                  <img
-                    class="options"
-                    src="https://d1doqjmisr497k.cloudfront.net/-/media/mccormick-us/recipes/mccormick/b/800/bag-n-season-chicken.jpg"
-                    height="200px"
-                  />
-                </div>
-                  <div class="col">
-                    <div class="title">Sample Title</div>  
-                    <img
-                class="options"
-                src="https://minimalistbaker.com/wp-content/uploads/2015/08/Fried-Rice-SQUARE.jpg"
-                height="200px"
-              /></div>
-
               <div class="col">
                 <div id="title0"></div>
                 <img id="option0" height="200px" />
@@ -214,11 +176,70 @@
                 <div id="title3"></div>
                 <img id="option3" height="200px" />
               </div>
+              <!-- CONATINER AREA FOR API LINKS ENDS HERE -->
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- END OF SECOND MODAL -->
+
+    <!-- START OF THIRD MODAL - THIS WILL BE THE SECOND PAGE OF 4 OPTIONS GENERATED FROM API -->
+    <div
+      class="modal fade"
+      id="second-option"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="secondOptionCenterTitle"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="second-option">
+              <span id="timer">-- seconds</span> to Select a Prefered Dish
+            </h5>
+            <!-- Modal close button -->
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="random-options">
+              <!-- CONATINER AREA FOR API LINKS STARTS HERE - THESE ID's MAY NEED TO BE CHANGED  -->
+              <div class="row">
+              <div class="col">
+                <div id="title0"></div>
+                <img id="option0" height="200px" />
+              </div>
+              <div class="col">
+                <div id="title1"></div>
+                <img id="option1" height="200px" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div id="title2"></div>
+                <img id="option2" height="200px" />
+              </div>
+              <div class="col">
+                <div id="title3"></div>
+                <img id="option3" height="200px" />
+              </div>
+              <!-- CONATINER AREA FOR API LINKS ENDS HERE -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END OF THIRD MODAL -->
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
