@@ -53,9 +53,7 @@
 </h4>
 </div>
 
-<!-- On Page Load show "Get Started" Button -->
-
-    <!-- WILL NEED .JS TO REMOVE BUTTON ON CLICK -->
+<!-- On Page Load "Get Started" Button (THIS BUTTON STAYS AND IS NOT HIDDEN) -->
     <div id="startButton">
     <button
       style="background-color:rgb(157, 221, 165)"
@@ -84,7 +82,7 @@
           <div class="modal-header">
             <div class="col-12 modal-title text-center" id="first-option">
               <span
-                ><h5>Cook or Order?</h5>
+                ><h5>Recipe OR Restaurant?</h5>
                 <!-- Modal close button -->
                 <button
                   type="button"
@@ -103,19 +101,19 @@
                 <div class="col">
                   <div class="title">Recipe</div>
                   <img
-                    id="end-choice"
-                    class="options"
-                    src="https://resizer.otstatic.com/v2/photos/medium/24162862.jpg"
-                    height="200px"
+                    id="recipe"
+                    class="options recipe"
+                    src="./assets/Images/recipe.png"
+                    width="200px"
                   />
                 </div>
                 <div class="col">
                   <div class="title">Restaurant</div>
                   <img
-                    id="end-choice"
-                    class="options"
-                    src="https://resizer.otstatic.com/v2/photos/medium/24162862.jpg"
-                    height="200px"
+                    id="restaurant"
+                    class="options restaurant"
+                    src="./assets/Images/restaurant.png"
+                    width="200px"
                   />
                 </div>
               </div>
@@ -124,7 +122,7 @@
         </div>
       </div>
     </div>
-     <!-- END OF FISRT MODAL (RECIPE OR RESTAURANT OPTION) -->
+     <!-- END OF FIRST MODAL (RECIPE OR RESTAURANT OPTION) -->
 
     <!-- START OF SECOND MODAL - FROM HERE DOWN THE IMAGES AND INFO WILL BE GENERATED FROM APIs -->
     <!-- THIS WILL BE THE FIRST 4 MEAL OPTIONS GENERATED -->
@@ -142,7 +140,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="second-option">
-              <span id="timer">-- seconds</span> to Select a Prefered Dish
+              <span id="timer"></span>...Seconds to Select a Prefered Dish
             </h5>
             <!-- Modal close button -->
             <button
@@ -156,41 +154,42 @@
           </div>
           <div class="modal-body text-center">
             <div class="random-options">
-              <!-- CONATINER AREA FOR API LINKS STARTS HERE -->
+              <!-- CONTAINER AREA FOR API LINKS STARTS HERE -->
               <div class="row">
               <div class="col">
                 <div id="title0"></div>
-                <img id="option0" height="200px" />
+                <img src="assets/Images/Placeholder.png" class="first-choice" id="option0" height="200px" />
               </div>
               <div class="col">
                 <div id="title1"></div>
-                <img id="option1" height="200px" />
+                <img src="assets/Images/Placeholder.png" class="first-choice" id="option1" height="200px" />
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <div id="title2"></div>
-                <img id="option2" height="200px" />
+                <img src="assets/Images/Placeholder.png" class="first-choice" id="option2" height="200px" />
               </div>
               <div class="col">
                 <div id="title3"></div>
-                <img id="option3" height="200px" />
+                <img src="assets/Images/Placeholder.png" class="first-choice" id="option3" height="200px" />
               </div>
-              <!-- CONATINER AREA FOR API LINKS ENDS HERE -->
+              <!-- CONTAINER AREA FOR API LINKS ENDS HERE -->
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <!-- END OF SECOND MODAL -->
 
-    <!-- START OF THIRD MODAL - THIS WILL BE THE SECOND PAGE OF 4 OPTIONS GENERATED FROM API -->
+    <!-- START OF THIRD MODAL - THIS WILL BE THE SECOND PAGE OF 3 OPTIONS GENERATED FROM API WITH USERS FIRST CHOICE PREPENDED TO TOP -->
     <div
       class="modal fade"
-      id="second-option"
+      id="third-option"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="secondOptionCenterTitle"
+      aria-labelledby="thirdOptionCenterTitle"
       aria-hidden="true"
       data-backdrop="static"
     >
@@ -198,8 +197,8 @@
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="second-option">
-              <span id="timer">-- seconds</span> to Select a Prefered Dish
+            <h5 class="modal-title" id="third-option">
+              <span id="timer"></span>...Seconds to Select a Prefered Dish
             </h5>
             <!-- Modal close button -->
             <button
@@ -213,33 +212,59 @@
           </div>
           <div class="modal-body text-center">
             <div class="random-options">
-              <!-- CONATINER AREA FOR API LINKS STARTS HERE - THESE ID's MAY NEED TO BE CHANGED  -->
+              <!-- USERS FIRST CHOICE IS PREPENDED HERE -->
               <div class="row">
+                <div class="col">
+                  <div id="user-choice-title"></div>
+                  <div class="user-choice"></div>
+                </div>
+              <!-- CONTAINER AREA FOR 3 MORE API LINKS STARTS HERE - THESE ID's MAY NEED TO BE CHANGED  -->
               <div class="col">
-                <div id="title0"></div>
-                <img id="option0" height="200px" />
-              </div>
-              <div class="col">
-                <div id="title1"></div>
-                <img id="option1" height="200px" />
+                <div id="title4"></div>
+                <img src="assets/Images/Placeholder.png" id="option4" class="second-choice" height="200px" />
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <div id="title2"></div>
-                <img id="option2" height="200px" />
+                <div id="title5"></div>
+                <img src="assets/Images/Placeholder.png" id="option5" class="second-choice" height="200px" />
               </div>
               <div class="col">
-                <div id="title3"></div>
-                <img id="option3" height="200px" />
+                <div id="title6"></div>
+                <img src="assets/Images/Placeholder.png" id="option6" class="second-choice" height="200px" />
               </div>
-              <!-- CONATINER AREA FOR API LINKS ENDS HERE -->
+              <!-- CONTAINER AREA FOR API LINKS ENDS HERE -->
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <!-- END OF THIRD MODAL -->
+
+    <!-- END RESULT MODAL (EXTRA LARGE AND SCROLLABLE) -->
+    <div class="modal fade modal-xl" id="end-result" tabindex="-1" role="document" aria-labelledby="endResultModalLabel"
+        aria-hidden="true" data-backdrop="static">
+      <div class="modal-dialog-scrollable modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="end-result">
+                  <span id="result-header"></span>You have Picked...
+                </h5>
+                <!-- Modal close button -->
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+          <div class="show-img"></div>
+        </div>
+      </div>
+    </div>    
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -255,12 +280,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/javascript/daniel.js"></script>
+    <script src="./assets/javascript/app.js"></script>
   </body>
 
-  <footer>
-    <div class="container">
-      Brad, Daniel, Mani, Marie & Shing &copy;
-    </div>
-  </footer>
 </html>
