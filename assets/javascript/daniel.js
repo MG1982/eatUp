@@ -43,19 +43,52 @@ $(document).ready(function() {
   function finalMeal() {}
 
   // Modal click functions
-
-  $("#get-started").on("click", function() {
-    $("get-started").hide();
-  });
-
-  $("#end-choice").on("click", function() {
-    console.log("click works!");
+  // END CHOICE (RECIPE)
+  $(".recipe").on("click", function() {
+    console.log(this);
+    console.log("recipe selected click works!");
+    // JQUERY NEEDED TO ADD 4 RANDOM CHOICES FROM API (titles 0,1,2+3)
     $("#first-option").modal("hide");
     $("#second-option").modal("show");
   });
+  // END CHOICE (RESTAURANT)
+  $(".restaurant").on("click", function() {
+    console.log("restaurant selected click works!");
+    // JQUERY NEEDED TO ADD RANDOM CHOICES FROM API (titles 0,1,2+3)
+    $("#first-option").modal("hide");
+    $("#second-option").modal("show");
+    console.log(this);
+  });
+  // FIRST CHOICE FROM 4 RANDOM OPTIONS
+  $(".first-choice").on("click", function() {
+    console.log("first choice click works!");
+    // SWITCH CLASSES AND APPEND TO SECOND CHOICE MODAL
+    $(this)
+      .attr("id", "user-choice-img")
+      .removeClass("first-choice")
+      .addClass("second-choice");
+    console.log(this);
+    $(".user-choice").prepend(this);
+    // JQUERY NEEDED TO ADD 3 RANDOM CHOICES FROM API TO THE SECOND CHOICE MODAL (titles 4,5+6)
+    $("#second-option").modal("hide");
+    $("#third-option").modal("show");
+  });
+
+  // SECOND CHOICE FROM 4 RANDOM OPTIONS
+  $(".second-choice").on("click", function() {
+    console.log("second choice click works!");
+    // SWITCH CLASSES AND APPEND TO END RESULT MODAL
+    $(this)
+      .removeClass("second-choice")
+      .addClass("end-result");
+    $("#third-option").modal("hide");
+    $(".show-img").prepend(this);
+    $("#end-result").modal("show");
+    console.log(this);
+  });
 });
-// MODAL OPTIONS
-//...
 
 //onclick restaurant
-//onclick recipe
+// //onclick recipe
+
+//
