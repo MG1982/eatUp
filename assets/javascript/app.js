@@ -74,6 +74,29 @@ $(document).ready(function() {
     // JQUERY NEEDED TO ADD 3 RANDOM CHOICES FROM API TO THE SECOND CHOICE MODAL (titles 4,5+6)
     $("#second-option").modal("hide");
     $("#third-option").modal("show");
+
+    var imgid =  $(this).attr("id");
+      imgid = imgid.replace("option","")
+    for (i = 4; i < 8; i++) {
+      var randomnum =  Math.floor(Math.random() * 31);
+        var randomdish = r.recipes[randomnum];
+        
+     console.log(randomdish);
+      console.log(imgid);
+       // console.log(titleID);
+        console.log(i);
+        if (i !== parseInt(imgid)){
+          
+        var imgurl = randomdish.image_url;
+        //var title = randomdish.title;
+        console.log(imgurl);
+       // console.log(title);
+        $('img[id="option' + i + '"]').attr("src",imgurl);
+       // $('p[id="' + i + '"]').text(title);
+    }
+    
+     }
+
   });
 
   // SECOND CHOICE FROM 4 RANDOM OPTIONS
