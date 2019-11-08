@@ -1,7 +1,8 @@
 $(document).ready(function() {
   // https://www.food2fork.com/api/search?key=328e7ee2a4092e96d84cefb806a0f42c&q=chicken
 
-  let apiKey = "328e7ee2a4092e96d84cefb806a0f42c";
+  //let apiKey = "328e7ee2a4092e96d84cefb806a0f42c";
+  let apiKey = "695d18000643e99343927f8c94c14c06";
   let query = "chicken";
   var queryURL =
     "https://www.food2fork.com/api/search?key=" + apiKey + "&q=" + query;
@@ -11,9 +12,10 @@ $(document).ready(function() {
     method: "GET"
   }).then(function(response) {
     r = JSON.parse(response);
-    console.log(r);
-    console.log(r.recipes);
-    console.log(r.recipes[0].title);
+    recipes = r.recipes;
+   // console.log(r);
+    //console.log(r.recipes);
+   // console.log(r.recipes[0].title);
 
     // function tableCreator() {
     //     table = $('<table>');
@@ -22,23 +24,23 @@ $(document).ready(function() {
 
     // }
 
-    for (i = 1; i < 5; i++) {
-      var meal = $("<div>");
-      meal.attr("id", "image" + i);
+    var dish = '';
 
-      // grab the well section and append to it
-      $(".images").append(meal);
+    for (let i = 0; i < 4; i++) {
+      console.log('1',i); 
+      dish = randomdish();
+      //console.log(dish);
+      console.log('2',i);
+      $("#option" + i).attr("src",dish.image_url); 
+      console.log('3',i);
     }
-    imageTitle("#image1", r.recipes[0].image_url, r.recipes[0].social_rank);
-    imageTitle("#image2", r.recipes[1].image_url, r.recipes[1].social_rank);
-    imageTitle("#image3", r.recipes[2].image_url, r.recipes[2].social_rank);
-    imageTitle("#image4", r.recipes[3].image_url, r.recipes[3].social_rank);
+    
   });
 
-  function imageTitle(element, image, rating) {
+/*   function imageTitle(element, image, rating) {
     $(element).html("<img src=" + image + ">");
     $(element).append("Recipe rating: " + rating);
-  }
+  } */
 
   function finalMeal() {}
 
@@ -72,6 +74,29 @@ $(document).ready(function() {
     // JQUERY NEEDED TO ADD 3 RANDOM CHOICES FROM API TO THE SECOND CHOICE MODAL (titles 4,5+6)
     $("#second-option").modal("hide");
     $("#third-option").modal("show");
+
+    var imgid =  $(this).attr("id");
+      imgid = imgid.replace("option","")
+    for (i = 4; i < 8; i++) {
+      var randomnum =  Math.floor(Math.random() * 31);
+        var randomdish = r.recipes[randomnum];
+        
+     console.log(randomdish);
+      console.log(imgid);
+       // console.log(titleID);
+        console.log(i);
+        if (i !== parseInt(imgid)){
+          
+        var imgurl = randomdish.image_url;
+        //var title = randomdish.title;
+        console.log(imgurl);
+       // console.log(title);
+        $('img[id="option' + i + '"]').attr("src",imgurl);
+       // $('p[id="' + i + '"]').text(title);
+    }
+    
+     }
+
   });
 
   // SECOND CHOICE FROM 4 RANDOM OPTIONS
@@ -87,6 +112,17 @@ $(document).ready(function() {
     console.log(this);
   });
 });
+
+
+//To pick a dish randomly
+function randomdish() {
+  console.log('hehe');
+  var randomnum =  Math.floor(Math.random() * 31);
+  console.log('hehe2');
+   randomdish2 = recipes[randomnum];
+  console.log(randomdish2);
+   return (randomdish2)
+}
 
 //onclick restaurant
 // //onclick recipe
