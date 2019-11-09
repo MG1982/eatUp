@@ -40,10 +40,23 @@
 
 </header>
 
-
+<!-- <button type="button" id="start-over" class="btn btn-sm btn-warning">Start Over</button> -->
 <body>
-
-
+ 
+<div id="results" class="container">
+<div class="card">
+    <h5 class="card-header">Your Results...</h5>
+    <div class="card-body result">
+      <h5 class="card-title">This will be the Title of Dish</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      
+    </div>
+    <div class="card-footer text-muted">
+        <a href="#" id="start-over" class="btn btn-sm btn-warning">Start Over</a>  
+      <!-- <button type="button" id="start-over" class="btn btn-sm btn-warning">Start Over</button> -->
+      </div>
+  </div>
+</div>
 
 <!-- Intro - maybe -->
 
@@ -56,9 +69,9 @@
 <!-- On Page Load "Get Started" Button (THIS BUTTON STAYS AND IS NOT HIDDEN) -->
     <div id="startButton">
     <button
-      style="background-color:rgb(157, 221, 165)"
+
       type="button"
-      id="#get-started"
+      id="get-started"
       class="btn btn-primary"
       data-toggle="modal"
       data-target="#first-option"
@@ -140,7 +153,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="second-option">
-              <span id="timer"></span>...Seconds to Select a Prefered Dish
+              <span id="timer1"></span>...Seconds to Select a Prefered Dish
             </h5>
             <!-- Modal close button -->
             <button
@@ -198,7 +211,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="third-option">
-              <span id="timer"></span>...Seconds to Select a Prefered Dish
+              <span id="timer2"></span>...Seconds to Select a Prefered Dish
             </h5>
             <!-- Modal close button -->
             <button
@@ -241,30 +254,6 @@
     </div>
   </div>
     <!-- END OF THIRD MODAL -->
-
-    <!-- END RESULT MODAL (EXTRA LARGE AND SCROLLABLE) -->
-    <div class="modal fade modal-xl" id="end-result" tabindex="-1" role="document" aria-labelledby="endResultModalLabel"
-        aria-hidden="true" data-backdrop="static">
-      <div class="modal-dialog-scrollable modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="end-result">
-                  <span id="result-header"></span>You have Picked...
-                </h5>
-                <!-- Modal close button -->
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-          <div class="show-img"></div>
-        </div>
-      </div>
-    </div>    
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
