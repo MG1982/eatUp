@@ -46,14 +46,17 @@ $(document).ready(function() {
     $(element).html("<img src=" + image + ">");
     $(element).append("Recipe rating: " + rating);
   } */
-  function randomdish() {
-    console.log("hehe");
-    var randomnum = Math.floor(Math.random() * 31);
-    console.log("hehe2");
-    randomdish2 = recipes[randomnum];
-    console.log(randomdish2);
-    return randomdish2;
-  }
+
+  //To pick a dish randomly
+function randomdish() {
+  console.log('hehe');
+  var randomnum =  Math.floor(Math.random() * 31);
+  console.log('hehe2');
+   randomdish2 = recipes[randomnum];
+  console.log(randomdish2);
+   return (randomdish2)
+}
+
   function finalMeal() {}
 
   $("#get-started").on("click", function() {
@@ -181,6 +184,8 @@ $(document).ready(function() {
       });
     });
   });
+});
+
   //TIMER FOR FIRST 4 MEALS SELECTION MODAL
   function timer1() {
     seconds = 10;
@@ -221,7 +226,8 @@ function showTimer() {
   }
 }
 
-//To pick a dish randomly
+
+
 
 //onclick restaurant
 // //onclick recipe
