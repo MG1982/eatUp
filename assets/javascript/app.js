@@ -19,9 +19,9 @@ $(document).ready(function() {
   }).then(function(response) {
     r = JSON.parse(response);
     recipes = r.recipes;
-   // console.log(r);
+    // console.log(r);
     //console.log(r.recipes);
-   // console.log(r.recipes[0].title);
+    // console.log(r.recipes[0].title);
 
     // function tableCreator() {
     //     table = $('<table>');
@@ -30,24 +30,30 @@ $(document).ready(function() {
 
     // }
 
-    var dish = '';
+    var dish = "";
 
     for (let i = 0; i < 4; i++) {
-      console.log('1',i); 
+      console.log("1", i);
       dish = randomdish();
       //console.log(dish);
-      console.log('2',i);
-      $("#option" + i).attr("src",dish.image_url); 
-      console.log('3',i);
+      console.log("2", i);
+      $("#option" + i).attr("src", dish.image_url);
+      console.log("3", i);
     }
-    
   });
 
-/*   function imageTitle(element, image, rating) {
+  /*   function imageTitle(element, image, rating) {
     $(element).html("<img src=" + image + ">");
     $(element).append("Recipe rating: " + rating);
   } */
-
+  function randomdish() {
+    console.log("hehe");
+    var randomnum = Math.floor(Math.random() * 31);
+    console.log("hehe2");
+    randomdish2 = recipes[randomnum];
+    console.log(randomdish2);
+    return randomdish2;
+  }
   function finalMeal() {}
 
   $("#get-started").on("click", function() {
@@ -110,74 +116,71 @@ $(document).ready(function() {
       });
     }
   });
+
   $("#second-option").on("hidden.bs.modal", function() {
     clearInterval(time1);
 
-  $(".first-choice").on("click", function() {
-    console.log("first choice click works!");
-    // SWITCH CLASSES AND APPEND TO SECOND CHOICE MODAL
-    $(this)
-      .attr("id", "user-choice-img")
-      .removeClass("first-choice")
-      .addClass("second-choice");
-    console.log(this);
-    $(".user-choice").prepend(this);
-    // JQUERY NEEDED TO ADD 3 RANDOM CHOICES FROM API TO THE SECOND CHOICE MODAL (titles 4,5+6)
-    $("#second-option").modal("hide");
-    $("#third-option").modal("show");
+    $(".first-choice").on("click", function() {
+      console.log("first choice click works!");
+      // SWITCH CLASSES AND APPEND TO SECOND CHOICE MODAL
+      $(this)
+        .attr("id", "user-choice-img")
+        .removeClass("first-choice")
+        .addClass("second-choice");
+      console.log(this);
+      $(".user-choice").prepend(this);
+      // JQUERY NEEDED TO ADD 3 RANDOM CHOICES FROM API TO THE SECOND CHOICE MODAL (titles 4,5+6)
+      $("#second-option").modal("hide");
+      $("#third-option").modal("show");
 
-    var imgid =  $(this).attr("id");
-      imgid = imgid.replace("option","")
-    for (i = 4; i < 8; i++) {
-      var randomnum =  Math.floor(Math.random() * 31);
+      var imgid = $(this).attr("id");
+      imgid = imgid.replace("option", "");
+      for (i = 4; i < 8; i++) {
+        var randomnum = Math.floor(Math.random() * 31);
         var randomdish = r.recipes[randomnum];
-        
-     console.log(randomdish);
-      console.log(imgid);
-       // console.log(titleID);
+
+        console.log(randomdish);
+        console.log(imgid);
+        // console.log(titleID);
         console.log(i);
-        if (i !== parseInt(imgid)){
-          
-        var imgurl = randomdish.image_url;
-        //var title = randomdish.title;
-        console.log(imgurl);
-       // console.log(title);
-        $('img[id="option' + i + '"]').attr("src",imgurl);
-       // $('p[id="' + i + '"]').text(title);
-    }
-    
-     }
+        if (i !== parseInt(imgid)) {
+          var imgurl = randomdish.image_url;
+          //var title = randomdish.title;
+          console.log(imgurl);
+          // console.log(title);
+          $('img[id="option' + i + '"]').attr("src", imgurl);
+          // $('p[id="' + i + '"]').text(title);
+        }
+      }
+    });
 
+    // SECOND CHOICE FROM 4 RANDOM OPTIONS
+    $("#third-option").on("shown.bs.modal", function() {
+      timer2();
 
-  });
-
-  // SECOND CHOICE FROM 4 RANDOM OPTIONS
-  $("#third-option").on("shown.bs.modal", function() {
-    timer2();
-
-    if ($("#third-option").is(":visible")) {
-      $(".second-choice").on("click", function() {
+      if ($("#third-option").is(":visible")) {
+        $(".second-choice").on("click", function() {
+          clearInterval(time2);
+          // SWITCH CLASSES AND APPEND TO END RESULT DIV
+          $(this)
+            .removeClass("second-choice")
+            .addClass("end-result");
+          $("#result").prepend(this);
+          $("#third-option").modal("hide");
+          console.log("second choice click works!");
+          console.log(this);
+        });
+      } else {
+        $(".second-choice").on("click", function() {
+          return false;
+        });
+      }
+      $("#third-option").on("hidden.bs.modal", function() {
+        $("#results").show();
         clearInterval(time2);
-        // SWITCH CLASSES AND APPEND TO END RESULT DIV
-        $(this)
-          .removeClass("second-choice")
-          .addClass("end-result");
-        $("#result").prepend(this);
-        $("#third-option").modal("hide");
-        console.log("second choice click works!");
-        console.log(this);
       });
-    } else {
-      $(".second-choice").on("click", function() {
-        return false;
-      });
-    }
-    $("#third-option").on("hidden.bs.modal", function() {
-      $("#results").show();
-      clearInterval(time2);
     });
   });
-
   //TIMER FOR FIRST 4 MEALS SELECTION MODAL
   function timer1() {
     seconds = 10;
@@ -218,16 +221,7 @@ function showTimer() {
   }
 }
 
-
 //To pick a dish randomly
-function randomdish() {
-  console.log('hehe');
-  var randomnum =  Math.floor(Math.random() * 31);
-  console.log('hehe2');
-   randomdish2 = recipes[randomnum];
-  console.log(randomdish2);
-   return (randomdish2)
-}
 
 //onclick restaurant
 // //onclick recipe
