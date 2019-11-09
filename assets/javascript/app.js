@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  $("#results").hide();
+  $("#intro").show();
+  $("#get-started").show();
+
+  let time1;
+  let time2;
   // https://www.food2fork.com/api/search?key=328e7ee2a4092e96d84cefb806a0f42c&q=chicken
 
   //let apiKey = "328e7ee2a4092e96d84cefb806a0f42c";
@@ -44,24 +50,69 @@ $(document).ready(function() {
 
   function finalMeal() {}
 
+  $("#get-started").on("click", function() {
+    $(this).hide();
+  });
+
+  // start over click function
+  $("#start-over").on("click", function() {
+    $("#results").hide();
+    $("#intro").show();
+    $("#get-started").show();
+  });
+
   // Modal click functions
-  // END CHOICE (RECIPE)
-  $(".recipe").on("click", function() {
-    console.log(this);
-    console.log("recipe selected click works!");
-    // JQUERY NEEDED TO ADD 4 RANDOM CHOICES FROM API (titles 0,1,2+3)
-    $("#first-option").modal("hide");
-    $("#second-option").modal("show");
+  $("#first-option").on("shown.bs.modal", function() {
+    $("#intro").hide();
+    $("#results").hide();
+
+    // END CHOICE (RECIPE)
+    $(".recipe").on("click", function() {
+      // console.log(this);
+      // console.log("recipe selected click works!");
+      // JQUERY NEEDED TO ADD 4 RANDOM CHOICES FROM API (titles 0,1,2+3)
+      $("#first-option").modal("hide");
+      $("#second-option").modal("show");
+    });
+
+    // END CHOICE (RESTAURANT)
+    $(".restaurant").on("click", function() {
+      $("#first-option").modal("hide");
+      $("#second-option").modal("show");
+      // console.log("restaurant selected click works!");
+      // console.log(this);
+    });
   });
-  // END CHOICE (RESTAURANT)
-  $(".restaurant").on("click", function() {
-    console.log("restaurant selected click works!");
-    // JQUERY NEEDED TO ADD RANDOM CHOICES FROM API (titles 0,1,2+3)
-    $("#first-option").modal("hide");
-    $("#second-option").modal("show");
-    console.log(this);
-  });
+
   // FIRST CHOICE FROM 4 RANDOM OPTIONS
+
+  $("#second-option").on("shown.bs.modal", function() {
+    timer1();
+    if ($("#second-option").is(":visible")) {
+      $(".first-choice").on("click", function() {
+        clearInterval(time1);
+        answered = false;
+        // SWITCH CLASSES AND APPEND TO SECOND CHOICE MODAL
+        $(this)
+          .attr("id", "user-choice-img")
+          .removeClass("first-choice")
+          .addClass("second-choice");
+        console.log("first choice click works!");
+        console.log(this);
+        $(".user-choice").prepend(this);
+        // JQUERY NEEDED TO ADD 3 RANDOM CHOICES FROM API TO THE SECOND CHOICE MODAL (titles 4,5+6)
+        $("#second-option").modal("hide");
+        $("#third-option").modal("show");
+      });
+    } else {
+      $(".first-choice").on("click", function() {
+        return false;
+      });
+    }
+  });
+  $("#second-option").on("hidden.bs.modal", function() {
+    clearInterval(time1);
+
   $(".first-choice").on("click", function() {
     console.log("first choice click works!");
     // SWITCH CLASSES AND APPEND TO SECOND CHOICE MODAL
@@ -97,21 +148,75 @@ $(document).ready(function() {
     
      }
 
+
   });
 
   // SECOND CHOICE FROM 4 RANDOM OPTIONS
-  $(".second-choice").on("click", function() {
-    console.log("second choice click works!");
-    // SWITCH CLASSES AND APPEND TO END RESULT MODAL
-    $(this)
-      .removeClass("second-choice")
-      .addClass("end-result");
-    $("#third-option").modal("hide");
-    $(".show-img").prepend(this);
-    $("#end-result").modal("show");
-    console.log(this);
+  $("#third-option").on("shown.bs.modal", function() {
+    timer2();
+
+    if ($("#third-option").is(":visible")) {
+      $(".second-choice").on("click", function() {
+        clearInterval(time2);
+        // SWITCH CLASSES AND APPEND TO END RESULT DIV
+        $(this)
+          .removeClass("second-choice")
+          .addClass("end-result");
+        $("#result").prepend(this);
+        $("#third-option").modal("hide");
+        console.log("second choice click works!");
+        console.log(this);
+      });
+    } else {
+      $(".second-choice").on("click", function() {
+        return false;
+      });
+    }
+    $("#third-option").on("hidden.bs.modal", function() {
+      $("#results").show();
+      clearInterval(time2);
+    });
   });
+
+  //TIMER FOR FIRST 4 MEALS SELECTION MODAL
+  function timer1() {
+    seconds = 10;
+    $("#timer1").html("00:" + seconds);
+    $("#timer1").html("00:" + seconds);
+    time1 = setInterval(showTimer, 1000);
+  } // starts/stops the countdown and handles the html display of the timer.
+  function showTimer() {
+    seconds--;
+    if (seconds < 10) {
+      $("#timer1").html("00:0" + seconds);
+    } else {
+      $("#timer1").html("00:" + seconds);
+    }
+    if (seconds < 1) {
+      clearInterval(time1);
+      //call a function that picks a random meal from array.
+    }
+  }
 });
+//TIMER FOR SECOND 4 MEALS SELECTION MODAL
+function timer2() {
+  seconds = 10;
+  $("#timer2").html("00:" + seconds);
+  $("#timer2").html("00:" + seconds);
+  time2 = setInterval(showTimer, 1000);
+} // starts/stops the countdown and handles the html display of the timer.
+function showTimer() {
+  seconds--;
+  if (seconds < 10) {
+    $("#timer2").html("00:0" + seconds);
+  } else {
+    $("#timer2").html("00:" + seconds);
+  }
+  if (seconds < 1) {
+    clearInterval(time2);
+    //call a function that picks a random meal from array.
+  }
+}
 
 
 //To pick a dish randomly
