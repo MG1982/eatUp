@@ -152,7 +152,7 @@ $(document).ready(function() {
     if ($("#second-option").is(":visible")) {
       startTimer(10, function() {
         console.log(
-          "TIME IS UP! - picking random dish and moving to next Model"
+          "TIME IS UP! - picking random dish and moving to next Modal"
         );
         // IF TIMER REACHES 0 RANDOM PICK FROM 4 AND MOVES TO NEXT MODAL
         let index = Math.floor(Math.random() * 3);
