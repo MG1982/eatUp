@@ -1,8 +1,10 @@
 /* Background Image */
 body {
-  background: url(../Images/beans.jpg) no-repeat center fixed;
-  background-size: 1700px 1000px;
-  margin-bottom: 60px;
+  background: url(../Images/beans.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* Title of Website elements */
@@ -20,7 +22,7 @@ h2 {
   font-family: "Oswald", sans-serif;
   font-size: 25px;
   margin: 10px;
-  color: rgb(0, 0, 0);
+  
 }
 
 h5 {
@@ -28,65 +30,96 @@ h5 {
   font-size: 28px;
 }
 
-/* Buttons */
-#startButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 100px;
+.title {
+  font-family: "Oswald", sans-serif;
 }
+
+/* Intro */
 
 #intro {
   text-align: center;
   font-family: "Libre Franklin", sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   background-color: rgb(255, 255, 255);
+  border: solid 1px black;
+  border-radius: 4px;
   opacity: 0.8;
   color: black;
-  margin: 30px;
-  padding: 15px;
-  margin-top: 30px;
-  font-weight: 700;
-  font: bold;
-  width: 500px;
-  border: black 1.5px solid;
-  border-radius: 4px;
-  margin-left: 459px;
+  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+
 }
 
+/* Buttons */
+
+button {
+  margin:190px 0px;
+}
+
+#startButton {
+position:absolute;
+    width:300px;
+    height:300px;
+    bottom:0px;
+    right:50%;
+    left:50%;
+    margin-left:-100px;
+    
+}
+
+/* Button Hover Glow */
 .btn-primary {
   border: none;
   border: solid black 1.5px;
   text-decoration: none;
+  position: relative;
+  text-align: center;
+  background: #171515;
+  color: rgb(0, 0, 0);
+  transition: .5s;
+  
 }
 
-/* Glow Effect for Button */
-
-.btn-primary::after {
-  content: "";
+.btn-primary:before {
+  content: '';
   position: absolute;
-  top: 500px;
-  left: 600px;
-  right: 600px;
-  bottom: 70px;
-  background: #fff;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: #53e08e;
+  transition: rgb(55, 224, 154);
+  transform: scale(.9);
   z-index: -1;
-  filter: blur(25px);
 }
 
-.btn-primary:before,
-.btn-primary::after {
-  background: linear-gradient(
-    110.1598456064869deg,
-    rgba(0, 166, 190, 1) 6.140625%,
-    rgba(0, 226, 123, 1) 95.51562499999999%
-  );
+.btn-primary:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #4cf0ac;
+  filter: blur(15px);
+}
+
+.btn-primary:hover {
+  color: #1f2422;
+  border:1px solid black;
+  box-shadow: 0 0 15px #198f8f;
+  text-shadow: 0 0 15px #00c5d3;
+}
+
+img:hover {
+  cursor: pointer;
 }
 
 .options {
   margin: 20px;
 }
+
+
 .options:hover {
   cursor: pointer;
 }
@@ -100,22 +133,4 @@ h5 {
   font-family: "Oswald", sans-serif;
   margin: 5px;
   font-size: 24px;
-}
-
-/* Footer */
-footer {
-  padding: 15px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  text-align: center;
-  background: rgb(255, 255, 255);
-  text-align: center;
-  font-family: "Didact Gothic", sans-serif;
-  border: solid 1px rgb(189, 189, 189);
-  border-radius: 1px;
-  opacity: 0.7;
 }

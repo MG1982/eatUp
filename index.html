@@ -56,121 +56,135 @@
           <a href="#" id="start-over" style="background-color:rgb(155, 224, 164)" class="btn btn-sm btn-warning">Start Over</a>
           <a href="#" id="nutrition-analysis" style="background-color:rgb(155, 224, 164)" class="btn btn-sm btn-warning">Nutrition Facts</a>
 
+
           <div class="err-result"></div>
           <div class="nutr-result"></div>
           <div class="nutrition-facts-label"></div>
         </div>
     </div>
   </div>
-  
-  <!-- Intro -->
-  
-  <div id="intro">
-  <h4>
-    Are you feeling hungry, tired or lazy? <br> <br>We provide a fun site that can help you <br> choose your next meal if you're on the go <br> or feel like staying in. <br> <br> Click below to get started and see all the wonderful choices we can provide you!
-  </h4>
-  </div>
-  
-  <!-- On Page Load "Get Started" Button (THIS BUTTON STAYS AND IS NOT HIDDEN) -->
-      <div id="startButton">
-      <button
-        style="background-color:rgb(155, 224, 164)"
-        type="button"
-        id="get-started"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#first-option"
-      >
-        <h2>Get Started!</h2>
-      </button>
-  
-      <!-- First Modal (RECIPE OR RESTAURANT OPTION)  DONT DELETE THIS!-->
-      <div
-        class="modal fade"
-        id="first-option"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="firstOptionCenterTitle"
-        aria-hidden="true"
-        data-backdrop="static"
-      >
-        <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <div class="col-12 modal-title text-center" id="first-option">
-                <span
-                  ><h5>Click on Recipe to Start!</h5>
-                  <!-- Modal close button -->
-                  <button
-                    type="button"
-                    class="close restart"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button></span
+
+<!-- Intro -->
+<div id="intro">
+<h4>
+  Are you feeling hungry, tired or lazy? <br> <br>We provide a fun site that can help you <br> choose your next meal if you're on the go <br> or feel like staying in. <br> <br> Click below to get started and see all the wonderful choices we can provide you!
+</h4>
+</div>
+
+<!-- On Page Load "Get Started" Button (THIS BUTTON STAYS AND IS NOT HIDDEN) -->
+    <div id="startButton">
+    <button
+      style="background-color:rgb(155, 224, 164)"
+      type="button"
+      id="get-started"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#first-option"
+    >
+      <h2>Get Started!</h2>
+    </button>
+
+    <!-- First Modal (RECIPE OR RESTAURANT OPTION)  DONT DELETE THIS!-->
+    <div
+      class="modal fade"
+      id="first-option"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="firstOptionCenterTitle"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="col-12 modal-title text-center" id="first-option">
+              <span
+                ><h5>Click on Recipe to Start!</h5>
+                <!-- Modal close button -->
+                <button
+                  type="button"
+                  class="close restart"
+                  data-dismiss="modal"
+                  aria-label="Close"
+
                 >
               </div>
             </div>
-            <div class="modal-body text-center">
-              <div class="options">
-                <div class="row">
-                  <div class="col">
-                    <div class="title">Recipe</div>
-                    <img
-                      id="recipe"
-                      class="options recipe"
-                      src="./assets/Images/recipe.png"
-                      width="200px"
-                    />
-                  </div>
-                  <div class="col">
-                    <div class="title"style="opacity: 0.3;">Restaurant</div>
-                    <img
-                      id="restaurant"
-                      class="options restaurant"
-                      style="opacity: 0.3;"
-                      src="./assets/Images/restaurant.png"
-                      width="200px"
-                    />
-                    <div class="coming-soon" style="color: red;">Coming soon...</div>
-                  </div>
+          </div>
+          <div class="modal-body text-center">
+            <div class="options">
+              <div class="row">
+                <div class="col">
+                  <div class="title">Recipe</div>
+                  <img
+                    id="recipe"
+                    class="options recipe"
+                    src="./assets/Images/recipe.png"
+                    width="200px"
+                  />
+                </div>
+                <div class="col">
+                  <div class="title"style="opacity: 0.3;">Restaurant</div>
+                  <img
+                    id="restaurant"
+                    class="options restaurant"
+                    style="opacity: 0.3;"
+                    src="./assets/Images/restaurant.png"
+                    width="200px"
+                  />
+                  <div class="coming-soon" style="color: red;">Coming soon...</div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-       <!-- END OF FIRST MODAL (RECIPE OR RESTAURANT OPTION) -->
-  
-      <!-- START OF SECOND MODAL - FROM HERE DOWN THE IMAGES AND INFO WILL BE GENERATED FROM APIs -->
-      <!-- THIS WILL BE THE FIRST 4 MEAL OPTIONS GENERATED -->
-      <div
-        class="modal fade"
-        id="second-option"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="secondOptionCenterTitle"
-        aria-hidden="true"
-        data-backdrop="static"
-      >
-        <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="second-option">
-                <span class="timer"></span>...Seconds to Select a Prefered Dish
-              </h5>
-              <!-- Modal close button -->
-              <button
-                type="button"
-                class="close restart"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
+    </div>
+     <!-- END OF FIRST MODAL (RECIPE OR RESTAURANT OPTION) -->
+
+    <!-- START OF SECOND MODAL - FROM HERE DOWN THE IMAGES AND INFO WILL BE GENERATED FROM APIs -->
+    <!-- THIS WILL BE THE FIRST 4 MEAL OPTIONS GENERATED -->
+    <div
+      class="modal fade"
+      id="second-option"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="secondOptionCenterTitle"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="second-option">
+              <span class="timer"></span>...Seconds to Select a Prefered Dish
+            </h5>
+            <!-- Modal close button -->
+            <button
+              type="button"
+              class="close restart"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="random-options">
+              <!-- CONTAINER AREA FOR API LINKS STARTS HERE -->
+              <div class="row">
+              <div class="col">
+                <div id="title0"></div>
+                <img src="assets/Images/Placeholder.png" class="first-choice" id="option0" height="200px" />
+              </div>
+              <div class="col">
+                <div id="title1"></div>
+                <img src="assets/Images/Placeholder.png" class="first-choice" id="option1" height="200px" />
+              </div>
+
             </div>
             <div class="modal-body text-center">
               <div class="random-options">
@@ -201,44 +215,40 @@
         </div>
       </div>
     </div>
-      <!-- END OF SECOND MODAL -->
-  
-      <!-- START OF THIRD MODAL - THIS WILL BE THE SECOND PAGE OF 3 OPTIONS GENERATED FROM API WITH USERS FIRST CHOICE PREPENDED TO TOP -->
-      <div
-        class="modal fade"
-        id="third-option"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="thirdOptionCenterTitle"
-        aria-hidden="true"
-        data-backdrop="static"
-      >
-        <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="third-option">
-                <span class="timer"></span>...Seconds to Select a Prefered Dish
-              </h5>
-              <!-- Modal close button -->
-              <button
-                type="button"
-                class="close restart"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body text-center">
-              <div class="random-options-two">
-                <!-- USERS FIRST CHOICE IS PREPENDED HERE -->
-                <div class="row">
-                  <div class="col">
-                    <div id="user-choice-title"></div>
-                    <div class="user-choice"></div>
-                  </div>
-                <!-- CONTAINER AREA FOR 3 MORE API LINKS STARTS HERE - THESE ID's MAY NEED TO BE CHANGED  -->
+  </div>
+    <!-- END OF SECOND MODAL -->
+
+    <!-- START OF THIRD MODAL - THIS WILL BE THE SECOND PAGE OF 3 OPTIONS GENERATED FROM API WITH USERS FIRST CHOICE PREPENDED TO TOP -->
+    <div
+      class="modal fade"
+      id="third-option"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="thirdOptionCenterTitle"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="third-option">
+              <span class="timer"></span>...Seconds to Select a Prefered Dish
+            </h5>
+            <!-- Modal close button -->
+            <button
+              type="button"
+              class="close restart"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="random-options-two">
+              <!-- USERS FIRST CHOICE IS PREPENDED HERE -->
+              <div class="row">
                 <div class="col">
                   <div id="title4"></div>
                   <img src="assets/Images/Placeholder.png" id="option4" class="second-choice" height="200px" />
@@ -260,6 +270,7 @@
         </div>
       </div>
     </div>
+
       <!-- END OF THIRD MODAL -->
   
   
@@ -285,4 +296,3 @@
     </body>
   
   </html>
-  
