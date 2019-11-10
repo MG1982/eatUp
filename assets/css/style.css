@@ -30,6 +30,10 @@ h5 {
   font-size: 28px;
 }
 
+.title {
+  font-family: "Oswald", sans-serif;
+}
+
 /* Intro */
 
 #intro {
@@ -68,6 +72,7 @@ position:absolute;
     
 }
 
+/* Button Hover Glow */
 .btn-primary {
   border: none;
   border: solid black 1.5px;
@@ -106,30 +111,6 @@ position:absolute;
   text-shadow: 0 0 15px #00c5d3;
 }
 
-
-/* Glow Effect for Button */
-
-/* .btn-primary::after {
-  content: "";
-  position: absolute;
-  top: 500px;
-  left: 600px;
-  right: 600px;
-  bottom: 70px;
-  background: #fff;
-  z-index: -1;
-  filter: blur(25px);
-}
-
-.btn-primary:before,
-.btn-primary::after {
-  background: linear-gradient(
-    110.1598456064869deg,
-    rgba(0, 166, 190, 1) 6.140625%,
-    rgba(0, 226, 123, 1) 95.51562499999999%
-  );
-} */
-
 img:hover {
   cursor: pointer;
 }
@@ -138,7 +119,6 @@ img:hover {
   margin: 20px;
 }
 
-/* Thing I did Last  */
 
 .options:hover {
   cursor: pointer;
