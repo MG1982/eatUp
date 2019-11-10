@@ -1,11 +1,13 @@
 # eatUP!
 
-## #Project 1
+## Project 1
+
 Trilogy – Full Stack Development Program at University of Western Austalia 2019
 
 <img src="https://cdn.uwabootcamp.com/wp-content/themes/WAustralia/media/img/UWA-logo.svg" width= 100>
 
 ## Team Members
+
 Marie Del Borrello
 
 Daniel Stephenson
@@ -33,6 +35,7 @@ With our busy lifestyles and trying to cram as much into our lives as possible, 
 - When the user decides on the desired choice, 3 new choices will show up keeping the first choice there.
 - Whatever the user decides as their final decision will show up after it has been clicked, this will either show the recipe steps or restaurant choices.
 - The user can decide whether they want to start over or go with their preferred choice.
+
 ## Tech/framework used:
 
 HTML, CSS, JavaScript, JQuery, AJAX, Bootstrap, Googlefonts
@@ -41,16 +44,17 @@ HTML, CSS, JavaScript, JQuery, AJAX, Bootstrap, Googlefonts
 
 [new technology goes here]
 
-## API Reference: 
+## API Reference:
 
-### Food2Fork  
-<img src="https://www.food2fork.com/F2F/static/images/webLogo.png" width= 200> 
+### Food2Fork
+
+<img src="https://www.food2fork.com/F2F/static/images/webLogo.png" width= 200>
 
 ### Zomato
 
-<img src="https://b.zmtcdn.com/images/developers/zomato-developers-logo.png" width= 200> 
+<img src="https://b.zmtcdn.com/images/developers/zomato-developers-logo.png" width= 200>
 
-## Copyright: 
+## Copyright:
 
 Marie Del Borrello, Daniel Stephenson, Mani Gonzalez, Shing Chan, Brad Cook
 
