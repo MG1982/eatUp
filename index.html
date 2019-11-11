@@ -40,7 +40,6 @@
 
 </header>
 
-<!-- <button type="button" id="start-over" class="btn btn-sm btn-warning">Start Over</button> -->
 <body>
  
 <div id="results" class="container">
@@ -48,16 +47,20 @@
     <h5 class="card-header">Your Results...</h5>
     <div class="card-body result">
       <h5 class="card-title">This will be the Title of Dish</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <div class="card-text" id="final-choice"></div>
       
     </div>
     <div class="card-footer text-muted">
-        <a href="#" id="start-over" style="background-color:rgb(155, 224, 164)" class="btn btn-sm btn-warning">Start Over</a>
+        <a href="#" id="start-over" class="btn btn-sm btn-warning">Start Over</a>
+        <a href="#" id="nutrition-analysis" style="background-color:rgb(155, 224, 164)" class="btn btn-sm btn-warning">Nutrition Facts</a>
+        <div class="err-result"></div>
+        <div class="nutr-result"></div>
+        <div class="nutrition-facts-label"></div>
       </div>
   </div>
 </div>
 
-<!-- Intro - maybe -->
+<!-- Intro -->
 
 <div id="intro">
 <h4>
@@ -94,11 +97,11 @@
           <div class="modal-header">
             <div class="col-12 modal-title text-center" id="first-option">
               <span
-                ><h5>Recipe OR Restaurant?</h5>
+                ><h5>Click on Recipe to Start!</h5>
                 <!-- Modal close button -->
                 <button
                   type="button"
-                  class="close"
+                  class="close restart"
                   data-dismiss="modal"
                   aria-label="Close"
                 >
@@ -108,7 +111,7 @@
             </div>
           </div>
           <div class="modal-body text-center">
-            <div class="random-options">
+            <div class="options">
               <div class="row">
                 <div class="col">
                   <div class="title">Recipe</div>
@@ -120,13 +123,15 @@
                   />
                 </div>
                 <div class="col">
-                  <div class="title">Restaurant</div>
+                  <div class="title"style="opacity: 0.3;">Restaurant</div>
                   <img
                     id="restaurant"
                     class="options restaurant"
+                    style="opacity: 0.3;"
                     src="./assets/Images/restaurant.png"
                     width="200px"
                   />
+                  <div class="coming-soon" style="color: red;">Coming soon...</div>
                 </div>
               </div>
             </div>
@@ -152,12 +157,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="second-option">
-              <span id="timer1"></span>...Seconds to Select a Prefered Dish
+              <span class="timer"></span>...Seconds to Select a Prefered Dish
             </h5>
             <!-- Modal close button -->
             <button
               type="button"
-              class="close"
+              class="close restart"
               data-dismiss="modal"
               aria-label="Close"
             >
@@ -210,12 +215,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="third-option">
-              <span id="timer2"></span>...Seconds to Select a Prefered Dish
+              <span class="timer"></span>...Seconds to Select a Prefered Dish
             </h5>
             <!-- Modal close button -->
             <button
               type="button"
-              class="close"
+              class="close restart"
               data-dismiss="modal"
               aria-label="Close"
             >
@@ -223,7 +228,7 @@
             </button>
           </div>
           <div class="modal-body text-center">
-            <div class="random-options">
+            <div class="random-options-two">
               <!-- USERS FIRST CHOICE IS PREPENDED HERE -->
               <div class="row">
                 <div class="col">
@@ -257,6 +262,9 @@
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <!-- Nutritional Facts table logic -->
+     <script src="./assets/javascript/nutriTable.js"></script>
+     <!-- JS -->
     <script src="./assets/javascript/app.js"></script>
     <!-- Popper -->
     <script
