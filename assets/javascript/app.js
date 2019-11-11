@@ -27,9 +27,8 @@ $(document).ready(function () {
   let apiKey = "c81d058c5179984ca2782d9d79e438f9";
   let queryList = ["chicken", "lamb", "pork", "pasta", "fish", "beef", "rice", "noodles", "cheese", "eggs", "nuts", "tofu"]
   let query = queryList[Math.floor(Math.random() * (queryList.length - 1))]
-  let page = Math.floor(Math.random() * 201)
   var queryURL =
-    "https://www.food2fork.com/api/search?key=" + apiKey + "&q=" + query;// + "&page=" + page;
+    "https://www.food2fork.com/api/search?key=" + apiKey + "&q=" + query;
 
 
   $.ajax({
@@ -49,19 +48,6 @@ $(document).ready(function () {
     //   console.log("not 30 queries")
     // } else {
     //   console.log("30 here")
-    // }
-
-    for (i = 1; i < 30; i++) {
-      test = r.recipes[i];
-      //console.log(test);
-    }
-    // //console.log(r.recipes[0].title);
-
-    // function tableCreator() {
-    //     table = $('<table>');
-    //     row = $('<tr>');
-    //     cell = $('<td>');
-
     // }
 
     var dish = "";
