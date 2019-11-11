@@ -1,20 +1,20 @@
-$(document).ready(function() {
-    
+$(document).ready(function () {
+
 	let app_ID = "d899105c";
 	let app_key = "4e64aafdda69381a79d5b1bc29d35632";
 	var num = 1;
 	var food = "chicken";
 	var queryURL = "https://api.edamam.com/api/nutrition-data?app_id=" +
-					app_ID + "&app_key=" + app_key + "&ingr=" + num + "%20" + food;
+		app_ID + "&app_key=" + app_key + "&ingr=" + num + "%20" + food;
 
 	$.ajax({
 		url: queryURL,
 		method: "GET"
-	}).then(function(response) {
-		console.log("TEST RESPONSE: ", response);
+	}).then(function (response) {
+		//console.log("TEST RESPONSE: ", response);
 
-		console.log(response.totalNutrients);
-			
+		//console.log(response.totalNutrients);
+
 	});
 
 
@@ -45,7 +45,7 @@ $(document).ready(function() {
                    '  </thead>'+
                    '  <tbody></div>';
 		$.ajax({
-			url: 'https://api.edamam.com/api/nutrition-details?app_id=47379841&app_key=d28718060b8adfd39783ead254df7f92',          
+			url: 'https://api.edamam.com/api/nutrition-details?app_id=47379841&app_key=d28718060b8adfd39783ead254df7f92',
 			type: 'POST',
 			data: JSON.stringify(arr),
 			contentType: 'application/json',
@@ -274,13 +274,11 @@ $(document).ready(function() {
 
                 $('.loading-area').css('display', 'none');
 				$('.content-area').css('display', 'block');  
-                
-              
 			},
 			error: function () {
-              
-              	err = '<span class="addition-e">We had a problem analysing this. Please check the ingredient spelling or if you have entered a quantities for the ingredients.</span>';
-              	$(".err-result").append(err);
+
+				err = '<span class="addition-e">We had a problem analysing this. Please check the ingredient spelling or if you have entered a quantities for the ingredients.</span>';
+				$(".err-result").append(err);
 
 				$('.loading-area').css('display', 'none');
 				$('.content-area').css('display', 'block');        
@@ -288,8 +286,3 @@ $(document).ready(function() {
 		});	
 	});     	 
 }); 
-
-
-	 
-	
-  
