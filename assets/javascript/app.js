@@ -24,8 +24,8 @@ $(document).ready(function() {
 
   // https://www.food2fork.com/api/search?key=328e7ee2a4092e96d84cefb806a0f42c&q=chicken
 
-  //let apiKey = "328e7ee2a4092e96d84cefb806a0f42c";
-  let apiKey = "15a561c6ad7e4fde1b7d89cb776dad5f"; //MANIS TEST KEY
+  let apiKey = "328e7ee2a4092e96d84cefb806a0f42c";
+  // let apiKey = "15a561c6ad7e4fde1b7d89cb776dad5f"; //MANIS TEST KEY
   // let apiKey = "695d18000643e99343927f8c94c14c06";
   let query = "chicken";
   var queryURL =
@@ -37,33 +37,20 @@ $(document).ready(function() {
   }).then(function(response) {
     r = JSON.parse(response);
     recipes = r.recipes;
-    // console.log(r);
-    //console.log(r.recipes);
-    // console.log(r.recipes[0].title);
-
-    // function tableCreator() {
-    //     table = $('<table>');
-    //     row = $('<tr>');
-    //     cell = $('<td>');
-
-    // }
 
     var dish = "";
 
     for (let i = 0; i < 4; i++) {
-      console.log("1", i);
+      // console.log("1", i);
       dish = randomdish();
       //console.log(dish);
-      console.log("2", i);
-      $("#option" + i).attr("src", dish.image_url);
-      console.log("3", i);
+      // console.log("2", i);
+      $("#option" + i)
+        .attr({ src: dish.image_url, data: dish.title })
+        .addClass(dish.source_url);
+      // console.log("3", i);
     }
   });
-
-  /*   function imageTitle(element, image, rating) {
-    $(element).html("<img src=" + image + ">");
-    $(element).append("Recipe rating: " + rating);
-  } */
 
   //To pick a dish randomly
   function randomdish() {
@@ -75,8 +62,7 @@ $(document).ready(function() {
     return randomdish2;
   }
 
-  function finalMeal() {}
-  // LOOK AWAY ITS UGLY!!!!!!!!!!!!!!!!!!!
+  // resets lots of stuff
   function start() {
     let rOptions = $(".random-options");
     let rOptionsTwo = $(".random-options-two");
@@ -115,12 +101,14 @@ $(document).ready(function() {
     start();
     clearInterval(timeIntervalID);
     for (let i = 0; i < 4; i++) {
-      console.log("1", i);
+      // console.log("1", i);
       dish = randomdish();
       //console.log(dish);
-      console.log("2", i);
-      $("#option" + i).attr("src", dish.image_url);
-      console.log("3", i);
+      // console.log("2", i);
+      $("#option" + i)
+        .attr({ src: dish.image_url, data: dish.title })
+        .addClass(dish.source_url);
+      // console.log("3", i);
     }
   });
 
@@ -172,9 +160,9 @@ $(document).ready(function() {
           var randomdish = r.recipes[randomnum];
           if (i !== parseInt(imgid)) {
             var imgurl = randomdish.image_url;
-            //var title = randomdish.title;
-            $('img[id="option' + i + '"]').attr("src", imgurl);
-            // $('p[id="' + i + '"]').text(title);
+            $('img[id="option' + i + '"]')
+              .attr({ src: imgurl, data: randomdish.title })
+              .addClass(randomdish.source_url);
           }
         }
       });
@@ -184,8 +172,8 @@ $(document).ready(function() {
           .attr("id", "user-choice-img")
           .removeClass("first-choice")
           .addClass("second-choice");
-        console.log("first choice click works!");
-        console.log(this);
+        // console.log("first choice click works!");
+        // console.log(this);
         $(".user-choice").prepend(this);
         $("#second-option").modal("hide");
         $("#third-option").modal("show");
@@ -196,9 +184,9 @@ $(document).ready(function() {
           var randomdish = r.recipes[randomnum];
           if (i !== parseInt(imgid)) {
             var imgurl = randomdish.image_url;
-            //var title = randomdish.title;
-            $('img[id="option' + i + '"]').attr("src", imgurl);
-            // $('p[id="' + i + '"]').text(title);
+            $('img[id="option' + i + '"]')
+              .attr({ src: imgurl, data: randomdish.title })
+              .addClass(randomdish.source_url);
           }
         }
       });
@@ -211,13 +199,13 @@ $(document).ready(function() {
 
   $("#second-option").on("hidden.bs.modal", function() {
     $(".first-choice").on("click", function() {
-      console.log("first choice click works!");
+      // console.log("first choice click works!");
       // SWITCH CLASSES AND APPEND TO SECOND CHOICE MODAL
       $(this)
         .attr("id", "user-choice-img")
         .removeClass("first-choice")
         .addClass("second-choice");
-      console.log(this);
+      // console.log(this);
       $(".user-choice").prepend(this);
       $("#second-option").modal("hide");
       $("#third-option").modal("show");
@@ -227,18 +215,17 @@ $(document).ready(function() {
       for (i = 4; i < 8; i++) {
         var randomnum = Math.floor(Math.random() * 31);
         var randomdish = r.recipes[randomnum];
-
-        console.log(randomdish);
-        console.log(imgid);
+        // console.log(randomdish);
+        // console.log(imgid);
         // console.log(titleID);
         console.log(i);
         if (i !== parseInt(imgid)) {
           var imgurl = randomdish.image_url;
-          //var title = randomdish.title;
           console.log(imgurl);
           // console.log(title);
-          $('img[id="option' + i + '"]').attr("src", imgurl);
-          // $('p[id="' + i + '"]').text(title);
+          $('img[id="option' + i + '"]')
+            .attr({ src: imgurl, data: randomdish.title })
+            .addClass(randomdish.source_url);
         }
       }
     });
@@ -262,14 +249,20 @@ $(document).ready(function() {
           $("#results").show();
         });
         $(".second-choice").on("click", function() {
-          // SWITCH CLASSES AND APPEND TO END RESULT DIV
-          $(this)
-            .removeClass("second-choice")
-            .addClass("end-result");
+          // REMOVE CLASSES AND APPEND DATA TO END RESULT DIVS
+          $(this).removeClass("second-choice");
           $("#final-choice").prepend(this);
           $("#third-option").modal("hide");
-          console.log("second choice click works!");
-          console.log(this);
+          // console.log("second choice click works!");
+          $(".recipe-title").html($(this).attr("data"));
+          $(".recipe-url").html(
+            "<a target='_blank' href='" +
+              $(this).attr("class") +
+              "'>Visit recipe website </a>"
+          );
+          // console.log(this);
+          // console.log($(this).attr("data"));
+          // console.log($(this).attr("class"));
           $("#results").show();
         });
       } else {
@@ -283,8 +276,3 @@ $(document).ready(function() {
     });
   });
 });
-
-//onclick restaurant
-// //onclick recipe
-
-//
