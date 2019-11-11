@@ -22,18 +22,18 @@ Brad Cook
 
 ## Overall Concept of Application:
 
-To help users decide on what they feel like doing for dinner. Whether you feel like making dinner at home, we provide a recipe to chose from or if you want to go out and spoil yourself, we can help with that decision.
+To help users decide on what they feel like eating for dinner. We provide different recipe options to chose from and also give nutritional information that benefits the user.
 
 ## Motivation:
 
-With our busy lifestyles and trying to cram as much into our lives as possible, sometimes we have run out of ideas on what to do for dinner - this where we wanted to help the end user, providing a resource to help decide.
+With our busy lifestyles, sometimes we run out of ideas on what to do for dinner - this where we wanted to help the end user, by providing a resource to help decide.
 
 ## Design Process:
 
-- Deciding whether you want a recipe or restaurant.
+- Deciding on the recipe option.
 - 4 Options of the preferred choice
 - When the user decides on the desired choice, 3 new choices will show up keeping the first choice there.
-- Whatever the user decides as their final decision will show up after it has been clicked, this will either show the recipe steps or restaurant choices.
+- Whatever the user decides as their final decision this will show up at the end and links the user to the recipe website and also gives a nutritional table below. 
 - The user can decide whether they want to start over or go with their preferred choice.
 
 ## Tech/framework used:
@@ -50,9 +50,9 @@ HTML, CSS, JavaScript, JQuery, AJAX, Bootstrap, Googlefonts
 
 <img src="https://www.food2fork.com/F2F/static/images/webLogo.png" width= 200>
 
-### Zomato
+### Edamam
 
-<img src="https://b.zmtcdn.com/images/developers/zomato-developers-logo.png" width= 200>
+<img src="https://ceoclub.bg/angels/wp-content/uploads/2015/06/edamam-768x512.jpg" width= 200>
 
 ## Copyright:
 

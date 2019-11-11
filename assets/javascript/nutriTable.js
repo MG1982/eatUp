@@ -1,35 +1,36 @@
-$(document).ready(function() {
-    
+$(document).ready(function () {
+
 	let app_ID = "d899105c";
 	let app_key = "4e64aafdda69381a79d5b1bc29d35632";
 	var num = 1;
 	var food = "chicken";
 	var queryURL = "https://api.edamam.com/api/nutrition-data?app_id=" +
-					app_ID + "&app_key=" + app_key + "&ingr=" + num + "%20" + food;
+		app_ID + "&app_key=" + app_key + "&ingr=" + num + "%20" + food;
 
 	$.ajax({
 		url: queryURL,
 		method: "GET"
-	}).then(function(response) {
-		console.log("TEST RESPONSE: ", response);
+	}).then(function (response) {
+		//console.log("TEST RESPONSE: ", response);
 
-		console.log(response.totalNutrients);
-			
+		//console.log(response.totalNutrients);
+
 	});
 
 
     $("#nutrition-analysis").on( "click", function() { 
       
-      	// $('.content-area').css('display', 'none');
-      	// $('.loading-area').css('display', 'block');      
+        $('.content-area').css('display', 'none');
+        $('.loading-area').css('display', 'block');        
       
-      	$(".nutr-result").html('');
+      	$(".nutrition-result").html('');
       	$(".err-result").html('');
-		$(".nutrition-facts-label").html('');  
+		$(".nutrition-result-label").html('');  
 		  
 		var arr = { 
-					"ingr": $('#nutritionAnalysis').val().split(/\n|\r/)
-				  };
+					"ingr": $('#nutriAnalysis').val().split(/\n|\r/)
+                  };
+                  
 					var quantity, measure, weight, foodMatch, unit;
 					var totalCal, FAT, totalDailyFAT, FASAT, totalDailyFASAT, FATRN, CHOLE, totalDailyCHOLE, NA, totalDailyNA, CHOCDF, totalDailyCHOCDF, FIBTG, totalDailyFIBTG, SUGAR, SUGARadded, PROCNT, totalDailyPROCNT, VITD, totalDailyVITD, CA, totalDailyCA, FE, totalDailyFE, K, totalDailyK, err;
 					var html = '<div class="col-md-12"><table class="table">'+
@@ -44,7 +45,7 @@ $(document).ready(function() {
                    '  </thead>'+
                    '  <tbody></div>';
 		$.ajax({
-			url: 'https://api.edamam.com/api/nutrition-details?app_id=47379841&app_key=d28718060b8adfd39783ead254df7f92',          
+			url: 'https://api.edamam.com/api/nutrition-details?app_id=47379841&app_key=d28718060b8adfd39783ead254df7f92',
 			type: 'POST',
 			data: JSON.stringify(arr),
 			contentType: 'application/json',
@@ -146,7 +147,7 @@ $(document).ready(function() {
 			var $msg = $('<div class="col-12"></div>');
 			$msg.append('<section class="performance-facts" id="performance-facts">'+
 						'	<div class="performance-facts__header">'+
-						'		<h1 class="performance-facts__title">Nutrition Facts</h1>'+
+						'		<h2 class="performance-facts__title">Nutrition Facts</h2>'+
 						'		<p><span id="lnumser">0</span> servings per container</p>'+
 						'	</div>'+
 						'	<table class="performance-facts__table">'+
@@ -265,26 +266,23 @@ $(document).ready(function() {
                       } else {
                       	err = '<span class="addition-e">We cannot calculate the nutrition for some ingredients. Please check the ingredient spelling or if you have entered a quantities for the ingredients.</span>';
                       }
-                    });
+                    });//
                 }
-				$(".nutr-result").append(html);
-              	$(".nutrition-facts-label").append($msg);
-				$(".err-result").append(err);
-              
+				$(".nutrition-result").append(html);
+              	$(".nutrition-result-label").append($msg);
+                $(".err-result").append(err);
+
+                $('.loading-area').css('display', 'none');
+				$('.content-area').css('display', 'block');  
 			},
 			error: function () {
-              
-              	err = '<span class="addition-e">We had a problem analysing this. Please check the ingredient spelling or if you have entered a quantities for the ingredients.</span>';
-              	$(".err-result").append(err);
 
-				// $('.loading-area').css('display', 'none');
+				err = '<span class="addition-e">We had a problem analysing this. Please check the ingredient spelling or if you have entered a quantities for the ingredients.</span>';
+				$(".err-result").append(err);
+
+				$('.loading-area').css('display', 'none');
 				$('.content-area').css('display', 'block');        
 			}        
 		});	
 	});     	 
 }); 
-
-
-	 
-	
-  
