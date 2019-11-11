@@ -24,12 +24,11 @@ $(document).ready(function () {
 
   // https://www.food2fork.com/api/search?key=328e7ee2a4092e96d84cefb806a0f42c&q=chicken
 
-  let apiKey = "c81d058c5179984ca2782d9d79e438f9";
+  let apiKey = "5976ff133bad5c45ded53f0db377a2c2";
   let queryList = ["chicken", "lamb", "pork", "pasta", "fish", "beef", "rice", "noodles", "cheese", "eggs", "nuts", "tofu"]
   let query = queryList[Math.floor(Math.random() * (queryList.length - 1))]
   var queryURL =
     "https://www.food2fork.com/api/search?key=" + apiKey + "&q=" + query;
-
 
   $.ajax({
     url: queryURL,
@@ -37,49 +36,32 @@ $(document).ready(function () {
   }).then(function (response) {
     r = JSON.parse(response);
     recipes = r.recipes;
-    //console.log(r);
-    //console.log(r.recipes);
-
-    //console.log(r.recipes.length);
-    //console.log(r.recipes);
-
-
-    // if (r.reciples.length != 30) {
-    //   console.log("not 30 queries")
-    // } else {
-    //   console.log("30 here")
-    // }
 
     var dish = "";
 
     for (let i = 0; i < 4; i++) {
-      //console.log("1", i);
+      // console.log("1", i);
       dish = randomdish();
-      console.log(dish[i])
       //console.log(dish);
-      //console.log("2", i);
-      $("#option" + i).attr("src", dish.image_url);
-      //console.log("3", i);
+      // console.log("2", i);
+      $("#option" + i)
+        .attr({ src: dish.image_url, data: dish.title })
+        .addClass(dish.source_url);
+      // console.log("3", i);
     }
   });
 
-  /*   function imageTitle(element, image, rating) {
-    $(element).html("<img src=" + image + ">");
-    $(element).append("Recipe rating: " + rating);
-  } */
-
   //To pick a dish randomly
   function randomdish() {
-    //console.log("hehe");
-    var randomnum = Math.floor(Math.random() * 29);
-    //console.log("hehe2");
+    // console.log("hehe");
+    var randomnum = Math.floor(Math.random() * 31);
+    // console.log("hehe2");
     randomdish2 = recipes[randomnum];
     console.log(randomdish2);
     return randomdish2;
   }
 
-  function finalMeal() { }
-  // LOOK AWAY ITS UGLY!!!!!!!!!!!!!!!!!!!
+  // resets lots of stuff
   function start() {
     let rOptions = $(".random-options");
     let rOptionsTwo = $(".random-options-two");
@@ -118,12 +100,14 @@ $(document).ready(function () {
     start();
     clearInterval(timeIntervalID);
     for (let i = 0; i < 4; i++) {
-      //console.log("1", i);
+      // console.log("1", i);
       dish = randomdish();
-      ////console.log(dish);
-      //console.log("2", i);
-      $("#option" + i).attr("src", dish.image_url);
-      //console.log("3", i);
+      //console.log(dish);
+      // console.log("2", i);
+      $("#option" + i)
+        .attr({ src: dish.image_url, data: dish.title })
+        .addClass(dish.source_url);
+      // console.log("3", i);
     }
   });
 
@@ -134,8 +118,8 @@ $(document).ready(function () {
 
     // END CHOICE (RECIPE)
     $(".recipe").on("click", function () {
-      // //console.log(this);
-      // //console.log("recipe selected click works!");
+      // console.log(this);
+      // console.log("recipe selected click works!");
       $("#first-option").modal("hide");
       $("#second-option").modal("show");
     });
@@ -144,8 +128,8 @@ $(document).ready(function () {
     // $(".restaurant").on("click", function() {
     // $("#first-option").modal("hide");
     // $("#second-option").modal("show");
-    // //console.log("restaurant selected click works!");
-    // //console.log(this);
+    // console.log("restaurant selected click works!");
+    // console.log(this);
     // });
   });
   //END OF RECIPE OR RESTURAUNT MODAL
@@ -154,9 +138,9 @@ $(document).ready(function () {
   $("#second-option").on("shown.bs.modal", function () {
     if ($("#second-option").is(":visible")) {
       startTimer(10, function () {
-        //console.log(
-        //"TIME IS UP! - picking random dish and moving to next Modal"
-        //);
+        console.log(
+          "TIME IS UP! - picking random dish and moving to next Modal"
+        );
         // IF TIMER REACHES 0 RANDOM PICK FROM 4 AND MOVES TO NEXT MODAL
         let index = Math.floor(Math.random() * 3);
         let secondRandomChoice = $("#option" + index);
@@ -171,14 +155,13 @@ $(document).ready(function () {
         var imgid = $(".second-choice").attr("id");
         imgid = imgid.replace("option", "");
         for (i = 4; i < 8; i++) {
-          var randomnum = Math.floor(Math.random() * 29);
+          var randomnum = Math.floor(Math.random() * 31);
           var randomdish = r.recipes[randomnum];
-          console.log(randomdish);
           if (i !== parseInt(imgid)) {
             var imgurl = randomdish.image_url;
-            //var title = randomdish.title;
-            $('img[id="option' + i + '"]').attr("src", imgurl);
-            // $('p[id="' + i + '"]').text(title);
+            $('img[id="option' + i + '"]')
+              .attr({ src: imgurl, data: randomdish.title })
+              .addClass(randomdish.source_url);
           }
         }
       });
@@ -188,21 +171,21 @@ $(document).ready(function () {
           .attr("id", "user-choice-img")
           .removeClass("first-choice")
           .addClass("second-choice");
-        //console.log("first choice click works!");
-        //console.log(this);
+        // console.log("first choice click works!");
+        // console.log(this);
         $(".user-choice").prepend(this);
         $("#second-option").modal("hide");
         $("#third-option").modal("show");
         var imgid = $(".second-choice").attr("id");
         imgid = imgid.replace("option", "");
         for (i = 4; i < 8; i++) {
-          var randomnum = Math.floor(Math.random() * 29);
+          var randomnum = Math.floor(Math.random() * 31);
           var randomdish = r.recipes[randomnum];
           if (i !== parseInt(imgid)) {
             var imgurl = randomdish.image_url;
-            //var title = randomdish.title;
-            $('img[id="option' + i + '"]').attr("src", imgurl);
-            // $('p[id="' + i + '"]').text(title);
+            $('img[id="option' + i + '"]')
+              .attr({ src: imgurl, data: randomdish.title })
+              .addClass(randomdish.source_url);
           }
         }
       });
@@ -215,13 +198,13 @@ $(document).ready(function () {
 
   $("#second-option").on("hidden.bs.modal", function () {
     $(".first-choice").on("click", function () {
-      //console.log("first choice click works!");
+      // console.log("first choice click works!");
       // SWITCH CLASSES AND APPEND TO SECOND CHOICE MODAL
       $(this)
         .attr("id", "user-choice-img")
         .removeClass("first-choice")
         .addClass("second-choice");
-      //console.log(this);
+      // console.log(this);
       $(".user-choice").prepend(this);
       $("#second-option").modal("hide");
       $("#third-option").modal("show");
@@ -229,20 +212,19 @@ $(document).ready(function () {
       var imgid = $(this).attr("id");
       imgid = imgid.replace("option", "");
       for (i = 4; i < 8; i++) {
-        var randomnum = Math.floor(Math.random() * 29);
+        var randomnum = Math.floor(Math.random() * 31);
         var randomdish = r.recipes[randomnum];
-
-        //console.log(randomdish);
-        //console.log(imgid);
-        // //console.log(titleID);
-        //console.log(i);
+        // console.log(randomdish);
+        // console.log(imgid);
+        // console.log(titleID);
+        console.log(i);
         if (i !== parseInt(imgid)) {
           var imgurl = randomdish.image_url;
-          //var title = randomdish.title;
-          //console.log(imgurl);
-          // //console.log(title);
-          $('img[id="option' + i + '"]').attr("src", imgurl);
-          // $('p[id="' + i + '"]').text(title);
+          console.log(imgurl);
+          // console.log(title);
+          $('img[id="option' + i + '"]')
+            .attr({ src: imgurl, data: randomdish.title })
+            .addClass(randomdish.source_url);
         }
       }
     });
@@ -251,9 +233,9 @@ $(document).ready(function () {
     $("#third-option").on("shown.bs.modal", function () {
       if ($("#third-option").is(":visible")) {
         startTimer(10, function () {
-          //console.log(
-          //"TIME IS UP! - picking random dish and moving to results page"
-          //);
+          console.log(
+            "TIME IS UP! - picking random dish and moving to results page"
+          );
           // IF TIMER REACHES 0 RANDOM PICK FROM 4 AND MOVES TO NEXT MODAL
           let index = Math.floor(Math.random() * 4) + 4;
           let secondRandomChoice = $("#option" + index);
@@ -266,14 +248,20 @@ $(document).ready(function () {
           $("#results").show();
         });
         $(".second-choice").on("click", function () {
-          // SWITCH CLASSES AND APPEND TO END RESULT DIV
-          $(this)
-            .removeClass("second-choice")
-            .addClass("end-result");
+          // REMOVE CLASSES AND APPEND DATA TO END RESULT DIVS
+          $(this).removeClass("second-choice");
           $("#final-choice").prepend(this);
           $("#third-option").modal("hide");
-          //console.log("second choice click works!");
-          //console.log(this);
+          // console.log("second choice click works!");
+          $(".recipe-title").html($(this).attr("data"));
+          $(".recipe-url").html(
+            "<a target='_blank' href='" +
+            $(this).attr("class") +
+            "'>Visit recipe website </a>"
+          );
+          // console.log(this);
+          // console.log($(this).attr("data"));
+          // console.log($(this).attr("class"));
           $("#results").show();
         });
       } else {
@@ -287,8 +275,3 @@ $(document).ready(function () {
     });
   });
 });
-
-//onclick restaurant
-// //onclick recipe
-
-//
