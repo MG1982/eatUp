@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Linking Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Linking normalize.css -->
-    <link rel="stylesheet" href="./assets/css/normalize.css" />
+  <!-- Linking Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
-    <!-- Linking style.css -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Linking normalize.css -->
+  <link rel="stylesheet" href="./assets/css/normalize.css" />
 
-    <!-- Tab Icon -->
-    <link id= "icon" rel="icon" type="image/png" href="http://icons.iconarchive.com/icons/webalys/kameleon.pics/48/Food-Dome-icon.png">
+  <!-- Linking style.css -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- Linking Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Amatic+SC|Cookie|Pathway+Gothic+One|Poiret+One|Satisfy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Anton|Didact+Gothic|Fjalla+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin|Oswald&display=swap" rel="stylesheet">
+  <!-- Tab Icon -->
+  <link id="icon" rel="icon" type="image/png"
+    href="http://icons.iconarchive.com/icons/webalys/kameleon.pics/48/Food-Dome-icon.png">
 
-     
-   
-    <title>eatUP</title>
+  <!-- Linking Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Advent+Pro|Amatic+SC|Cookie|Pathway+Gothic+One|Poiret+One|Satisfy&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Didact+Gothic|Fjalla+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin|Oswald&display=swap" rel="stylesheet">
+
+
+
+  <title>eatUP</title>
 
 </head>
 
@@ -41,73 +41,57 @@
 </header>
 
 <body>
- 
-<div id="results" class="container">
-<div class="card">
-    <h5 class="card-header">Your Results...</h5>
-    <div class="card-body result">
-      <h5 class="card-title">This will be the Title of Dish</h5>
-      <div class="card-text" id="final-choice"></div>
-      
-    </div>
-    <div class="card-footer text-muted">
+
+  <div id="results" class="container">
+    <div class="card">
+      <h5 class="card-header">Your Result...</h5>
+      <div class="card-body result">
+        <h5 class="card-title recipe-title"></h5>
+        <div class="card-text" id="final-choice"></div>
+        <div class="recipe-url"></div>
+      </div>
+      <div class="card-footer text-muted">
         <a href="#" id="start-over" class="btn btn-sm btn-warning">Start Over</a>
-        <a href="#" id="nutrition-analysis" style="background-color:rgb(155, 224, 164)" class="btn btn-sm btn-warning">Nutrition Facts</a>
+        <a href="#" id="nutrition-analysis" style="background-color:rgb(155, 224, 164)"
+          class="btn btn-sm btn-warning">Nutrition Facts</a>
         <div class="err-result"></div>
         <div class="nutr-result"></div>
         <div class="nutrition-facts-label"></div>
       </div>
+    </div>
   </div>
-</div>
 
-<!-- Intro -->
+  <!-- Intro -->
 
-<div id="intro">
-<h4>
-  Are you feeling hungry, tired or lazy? <br> <br>We provide a fun site that can help you <br> choose your next meal if you're on the go <br> or feel like staying in. <br> <br> Click below to get started and see all the wonderful choices we can provide you!
-</h4>
-</div>
+  <div id="intro">
+    <h4>
+      Are you feeling hungry, tired or lazy? <br> <br> We provide a fun site that can help you <br> choose your next
+      quick and tasty meal. <br> <br> Click below to get started and see all the wonderful choices we can provide you!
+    </h4>
+  </div>
 
-<!-- On Page Load "Get Started" Button (THIS BUTTON STAYS AND IS NOT HIDDEN) -->
-    <div id="startButton">
-    <button
-      style="background-color:rgb(155, 224, 164)"
-      type="button"
-      id="get-started"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target="#first-option"
-    >
+  <!-- On Page Load "Get Started" Button (THIS BUTTON STAYS AND IS NOT HIDDEN) -->
+  <div id="startButton">
+    <button style="background-color:rgb(155, 224, 164)" type="button" id="get-started" class="btn btn-primary"
+      data-toggle="modal" data-target="#first-option">
       <h2>Get Started!</h2>
     </button>
 
     <!-- First Modal (RECIPE OR RESTAURANT OPTION)  DONT DELETE THIS!-->
-    <div
-      class="modal fade"
-      id="first-option"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="firstOptionCenterTitle"
-      aria-hidden="true"
-      data-backdrop="static"
-    >
+    <div class="modal fade" id="first-option" tabindex="-1" role="dialog" aria-labelledby="firstOptionCenterTitle"
+      aria-hidden="true" data-backdrop="static">
       <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <div class="col-12 modal-title text-center" id="first-option">
-              <span
-                ><h5>Click on Recipe to Start!</h5>
+              <span>
+                <h5>Click on Recipe to Start!</h5>
                 <!-- Modal close button -->
-                <button
-                  type="button"
-                  class="close restart"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
+                <button type="button" class="close restart" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
-                </button></span
-              >
+                </button>
+              </span>
             </div>
           </div>
           <div class="modal-body text-center">
@@ -115,22 +99,12 @@
               <div class="row">
                 <div class="col">
                   <div class="title">Recipe</div>
-                  <img
-                    id="recipe"
-                    class="options recipe"
-                    src="./assets/Images/recipe.png"
-                    width="200px"
-                  />
+                  <img id="recipe" class="options recipe" src="./assets/Images/recipe.png" width="200px" />
                 </div>
                 <div class="col">
-                  <div class="title"style="opacity: 0.3;">Restaurant</div>
-                  <img
-                    id="restaurant"
-                    class="options restaurant"
-                    style="opacity: 0.3;"
-                    src="./assets/Images/restaurant.png"
-                    width="200px"
-                  />
+                  <div class="title" style="opacity: 0.3;">Restaurant</div>
+                  <img id="restaurant" class="options restaurant" style="opacity: 0.3;"
+                    src="./assets/Images/restaurant.png" width="200px" />
                   <div class="coming-soon" style="color: red;">Coming soon...</div>
                 </div>
               </div>
@@ -139,33 +113,21 @@
         </div>
       </div>
     </div>
-     <!-- END OF FIRST MODAL (RECIPE OR RESTAURANT OPTION) -->
+    <!-- END OF FIRST MODAL (RECIPE OR RESTAURANT OPTION) -->
 
     <!-- START OF SECOND MODAL - FROM HERE DOWN THE IMAGES AND INFO WILL BE GENERATED FROM APIs -->
     <!-- THIS WILL BE THE FIRST 4 MEAL OPTIONS GENERATED -->
-    <div
-      class="modal fade"
-      id="second-option"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="secondOptionCenterTitle"
-      aria-hidden="true"
-      data-backdrop="static"
-    >
+    <div class="modal fade" id="second-option" tabindex="-1" role="dialog" aria-labelledby="secondOptionCenterTitle"
+      aria-hidden="true" data-backdrop="static">
       <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="second-option">
               <span class="timer"></span>...Seconds to Select a Prefered Dish
             </h5>
             <!-- Modal close button -->
-            <button
-              type="button"
-              class="close restart"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
+            <button type="button" class="close restart" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -173,57 +135,45 @@
             <div class="random-options">
               <!-- CONTAINER AREA FOR API LINKS STARTS HERE -->
               <div class="row">
-              <div class="col">
-                <div id="title0"></div>
-                <img src="assets/Images/Placeholder.png" class="first-choice" id="option0" height="200px" />
+                <div class="col">
+                  <div id="title0"></div>
+                  <img src="assets/Images/Placeholder.png" class="first-choice" id="option0" height="200px" />
+                </div>
+                <div class="col">
+                  <div id="title1"></div>
+                  <img src="assets/Images/Placeholder.png" class="first-choice" id="option1" height="200px" />
+                </div>
               </div>
-              <div class="col">
-                <div id="title1"></div>
-                <img src="assets/Images/Placeholder.png" class="first-choice" id="option1" height="200px" />
+              <div class="row">
+                <div class="col">
+                  <div id="title2"></div>
+                  <img src="assets/Images/Placeholder.png" class="first-choice" id="option2" height="200px" />
+                </div>
+                <div class="col">
+                  <div id="title3"></div>
+                  <img src="assets/Images/Placeholder.png" class="first-choice" id="option3" height="200px" />
+                </div>
+                <!-- CONTAINER AREA FOR API LINKS ENDS HERE -->
               </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div id="title2"></div>
-                <img src="assets/Images/Placeholder.png" class="first-choice" id="option2" height="200px" />
-              </div>
-              <div class="col">
-                <div id="title3"></div>
-                <img src="assets/Images/Placeholder.png" class="first-choice" id="option3" height="200px" />
-              </div>
-              <!-- CONTAINER AREA FOR API LINKS ENDS HERE -->
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
     <!-- END OF SECOND MODAL -->
 
     <!-- START OF THIRD MODAL - THIS WILL BE THE SECOND PAGE OF 3 OPTIONS GENERATED FROM API WITH USERS FIRST CHOICE PREPENDED TO TOP -->
-    <div
-      class="modal fade"
-      id="third-option"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="thirdOptionCenterTitle"
-      aria-hidden="true"
-      data-backdrop="static"
-    >
+    <div class="modal fade" id="third-option" tabindex="-1" role="dialog" aria-labelledby="thirdOptionCenterTitle"
+      aria-hidden="true" data-backdrop="static">
       <!-- Added .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="third-option">
               <span class="timer"></span>...Seconds to Select a Prefered Dish
             </h5>
             <!-- Modal close button -->
-            <button
-              type="button"
-              class="close restart"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
+            <button type="button" class="close restart" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -235,50 +185,46 @@
                   <div id="user-choice-title"></div>
                   <div class="user-choice"></div>
                 </div>
-              <!-- CONTAINER AREA FOR 3 MORE API LINKS STARTS HERE - THESE ID's MAY NEED TO BE CHANGED  -->
-              <div class="col">
-                <div id="title4"></div>
-                <img src="assets/Images/Placeholder.png" id="option4" class="second-choice" height="200px" />
+                <!-- CONTAINER AREA FOR 3 MORE API LINKS STARTS HERE - THESE ID's MAY NEED TO BE CHANGED  -->
+                <div class="col">
+                  <div id="title4"></div>
+                  <img src="assets/Images/Placeholder.png" id="option4" class="second-choice" height="200px" />
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div id="title5"></div>
-                <img src="assets/Images/Placeholder.png" id="option5" class="second-choice" height="200px" />
+              <div class="row">
+                <div class="col">
+                  <div id="title5"></div>
+                  <img src="assets/Images/Placeholder.png" id="option5" class="second-choice" height="200px" />
+                </div>
+                <div class="col">
+                  <div id="title6"></div>
+                  <img src="assets/Images/Placeholder.png" id="option6" class="second-choice" height="200px" />
+                </div>
+                <!-- CONTAINER AREA FOR API LINKS ENDS HERE -->
               </div>
-              <div class="col">
-                <div id="title6"></div>
-                <img src="assets/Images/Placeholder.png" id="option6" class="second-choice" height="200px" />
-              </div>
-              <!-- CONTAINER AREA FOR API LINKS ENDS HERE -->
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
     <!-- END OF THIRD MODAL -->
 
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <!-- Nutritional Facts table logic -->
-     <script src="./assets/javascript/nutriTable.js"></script>
-     <!-- JS -->
+    <!-- Nutritional Facts table logic -->
+    <script src="./assets/javascript/nutriTable.js"></script>
+    <!-- JS -->
     <script src="./assets/javascript/app.js"></script>
     <!-- Popper -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <!-- Bootstrap -->
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    
-  </body>
+      crossorigin="anonymous"></script>
+
+</body>
 
 </html>
