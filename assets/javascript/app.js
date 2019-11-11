@@ -24,9 +24,9 @@ $(document).ready(function() {
 
   // https://www.food2fork.com/api/search?key=328e7ee2a4092e96d84cefb806a0f42c&q=chicken
 
-  let apiKey = "328e7ee2a4092e96d84cefb806a0f42c";
+  // let apiKey = "328e7ee2a4092e96d84cefb806a0f42c";
   // let apiKey = "15a561c6ad7e4fde1b7d89cb776dad5f"; //MANIS TEST KEY
-  // let apiKey = "695d18000643e99343927f8c94c14c06";
+  let apiKey = "695d18000643e99343927f8c94c14c06";
   let query = "chicken";
   var queryURL =
     "https://www.food2fork.com/api/search?key=" + apiKey + "&q=" + query;
@@ -54,9 +54,9 @@ $(document).ready(function() {
 
   //To pick a dish randomly
   function randomdish() {
-    console.log("hehe");
+    // console.log("hehe");
     var randomnum = Math.floor(Math.random() * 31);
-    console.log("hehe2");
+    // console.log("hehe2");
     randomdish2 = recipes[randomnum];
     console.log(randomdish2);
     return randomdish2;
