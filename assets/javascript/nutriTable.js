@@ -266,7 +266,7 @@ $(document).ready(function() {
                       } else {
                       	err = '<span class="addition-e">We cannot calculate the nutrition for some ingredients. Please check the ingredient spelling or if you have entered a quantities for the ingredients.</span>';
                       }
-                    });
+                    });//
                 }
 				$(".nutrition-result").append(html);
               	$(".nutrition-result-label").append($msg);
