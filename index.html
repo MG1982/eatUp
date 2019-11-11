@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css?family=Anton|Didact+Gothic|Fjalla+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin|Oswald&display=swap" rel="stylesheet">
 
-     
+    
    
     <title>eatUP</title>
 
@@ -43,21 +43,59 @@
 <body>
  
 <div id="results" class="container">
-<div class="card">
-    <h5 class="card-header">Your Result...</h5>
+
+  <div id="nutrition-result">
+      <div class="container-fluid bg-light bgr inside">
+          <div class="container" id="container">
+              <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                      <div class="col-md-12">
+                          <div class="row">
+                              <div class="col-md-12"><h1>Nutrition Analysis</h1></div>
+                          </div>
+                          <div class="row">
+                                  <div class="col-md-12 loading-area">
+                                      <div class="loader"></div>
+                                  </div>
+                                  <div class="col-md-12 result-area"></div>
+                                  <div class="col-md-12 content-area demo-analysis text-center">
+                                  <h5>Enter an ingredient list of what you are cooking, like <span class="example">"1 cup rice, 10 oz chickpeas"</span>, etc.</br>Enter each ingredient on a new line.</h5>
+                                  <div class="col-sm-7">
+                                      <p>
+                                          <textarea name="" id="nutriAnalysis" placeholder="1 cup rice" cols="30" rows="10" class="form-control"></textarea>
+                                      </p>
+                                      <a href="#" id="start-over-two" class="btn btn-sm btn-warning">Start Over</a>
+                                      <a href="#" id="nutrition-analysis" style="background-color:rgb(155, 224, 164)" class="btn btn-sm btn-warning">Nutrition Table</a>
+                                       
+                                      <div class="err-result"></div>
+                                      <div class="nutrition-result"></div>
+                                  </div>
+                                  <div class="col-sm-5">
+                                      <div class="nutrition-result-label"></div>
+                                  </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div id="recipe-result">
+    <div class="card">
+      <h5 class="card-header">Your Result...</h5>
     <div class="card-body result">
       <h5 class="card-title recipe-title"></h5>
       <div class="card-text" id="final-choice"></div>
       <div class="recipe-url"></div>
     </div>
     <div class="card-footer text-muted">
-        <a href="#" id="start-over" class="btn btn-sm btn-warning">Start Over</a>
-        <a href="#" id="nutrition-analysis" style="background-color:rgb(155, 224, 164)" class="btn btn-sm btn-warning">Nutrition Facts</a>
-        <div class="err-result"></div>
-        <div class="nutr-result"></div>
-        <div class="nutrition-facts-label"></div>
-      </div>
+        <a href="#" id="start-over" class="btn btn-sm btn-warning">Start Over</a>        
+    </div>
+    </div>
   </div>
+
 </div>
 
 <!-- Intro -->
@@ -97,7 +135,7 @@
           <div class="modal-header">
             <div class="col-12 modal-title text-center" id="first-option">
               <span
-                ><h5>Click on Recipe to Start!</h5>
+                ><h5>Click on Recipe or Nutrition Table to Start!</h5>
                 <!-- Modal close button -->
                 <button
                   type="button"
@@ -122,6 +160,15 @@
                     width="200px"
                   />
                 </div>
+                <div class="col">
+                    <div class="title">Nutrition Table</div>
+                    <img
+                      id="nut"
+                      class="options nut"
+                      src="./assets/Images/nutritionTable.png"
+                      width="200px"
+                    />
+                  </div>
                 <div class="col">
                   <div class="title"style="opacity: 0.3;">Restaurant</div>
                   <img
@@ -262,10 +309,12 @@
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <!-- Nutritional Facts table logic -->
-     <script src="./assets/javascript/nutriTable.js"></script>
+    <!-- jquery version for Nutritional Facts API -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
      <!-- JS -->
     <script src="./assets/javascript/app.js"></script>
+     <!-- Nutritional Facts table logic -->
+     <script src="./assets/javascript/nutriTable.js"></script>
     <!-- Popper -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
