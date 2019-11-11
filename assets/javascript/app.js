@@ -24,12 +24,9 @@ $(document).ready(function () {
 
   // https://www.food2fork.com/api/search?key=328e7ee2a4092e96d84cefb806a0f42c&q=chicken
 
-  //let apiKey = "328e7ee2a4092e96d84cefb806a0f42c";
-  //let apiKey = "15a561c6ad7e4fde1b7d89cb776dad5f"; //MANIS TEST KEY
-
-  let apiKey = "695d18000643e99343927f8c94c14c06";
+  let apiKey = "c81d058c5179984ca2782d9d79e438f9";
   let queryList = ["chicken", "lamb", "pork", "pasta", "fish", "beef", "rice", "noodles", "cheese", "eggs", "nuts", "tofu"]
-  let query = queryList[Math.floor(Math.random() * (queryList.length + 1))]
+  let query = queryList[Math.floor(Math.random() * (queryList.length - 1))]
   let page = Math.floor(Math.random() * 201)
   var queryURL =
     "https://www.food2fork.com/api/search?key=" + apiKey + "&q=" + query;// + "&page=" + page;
@@ -44,8 +41,8 @@ $(document).ready(function () {
     //console.log(r);
     //console.log(r.recipes);
 
-    console.log(r.recipes.length);
-    console.log(r.recipes);
+    //console.log(r.recipes.length);
+    //console.log(r.recipes);
 
 
     // if (r.reciples.length != 30) {
@@ -54,9 +51,9 @@ $(document).ready(function () {
     //   console.log("30 here")
     // }
 
-    for (i = 0; i < 31; i++) {
-      test = r.recipes[i].image_url;
-      console.log(test);
+    for (i = 1; i < 30; i++) {
+      test = r.recipes[i];
+      //console.log(test);
     }
     // //console.log(r.recipes[0].title);
 
@@ -72,7 +69,8 @@ $(document).ready(function () {
     for (let i = 0; i < 4; i++) {
       //console.log("1", i);
       dish = randomdish();
-      ////console.log(dish);
+      console.log(dish[i])
+      //console.log(dish);
       //console.log("2", i);
       $("#option" + i).attr("src", dish.image_url);
       //console.log("3", i);
@@ -87,10 +85,10 @@ $(document).ready(function () {
   //To pick a dish randomly
   function randomdish() {
     //console.log("hehe");
-    var randomnum = Math.floor(Math.random() * 31);
+    var randomnum = Math.floor(Math.random() * 29);
     //console.log("hehe2");
     randomdish2 = recipes[randomnum];
-    //console.log(randomdish2);
+    console.log(randomdish2);
     return randomdish2;
   }
 
@@ -187,7 +185,7 @@ $(document).ready(function () {
         var imgid = $(".second-choice").attr("id");
         imgid = imgid.replace("option", "");
         for (i = 4; i < 8; i++) {
-          var randomnum = Math.floor(Math.random() * 31);
+          var randomnum = Math.floor(Math.random() * 29);
           var randomdish = r.recipes[randomnum];
           console.log(randomdish);
           if (i !== parseInt(imgid)) {
@@ -212,7 +210,7 @@ $(document).ready(function () {
         var imgid = $(".second-choice").attr("id");
         imgid = imgid.replace("option", "");
         for (i = 4; i < 8; i++) {
-          var randomnum = Math.floor(Math.random() * 31);
+          var randomnum = Math.floor(Math.random() * 29);
           var randomdish = r.recipes[randomnum];
           if (i !== parseInt(imgid)) {
             var imgurl = randomdish.image_url;
@@ -245,7 +243,7 @@ $(document).ready(function () {
       var imgid = $(this).attr("id");
       imgid = imgid.replace("option", "");
       for (i = 4; i < 8; i++) {
-        var randomnum = Math.floor(Math.random() * 31);
+        var randomnum = Math.floor(Math.random() * 29);
         var randomdish = r.recipes[randomnum];
 
         //console.log(randomdish);
