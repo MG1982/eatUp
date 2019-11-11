@@ -20,16 +20,17 @@ $(document).ready(function() {
 
     $("#nutrition-analysis").on( "click", function() { 
       
-      	// $('.content-area').css('display', 'none');
-      	// $('.loading-area').css('display', 'block');      
+        $('.content-area').css('display', 'none');
+        $('.loading-area').css('display', 'block');        
       
-      	$(".nutr-result").html('');
+      	$(".nutrition-result").html('');
       	$(".err-result").html('');
-		$(".nutrition-facts-label").html('');  
+		$(".nutrition-result-label").html('');  
 		  
 		var arr = { 
-					"ingr": $('#nutritionAnalysis').val().split(/\n|\r/)
-				  };
+					"ingr": $('#nutriAnalysis').val().split(/\n|\r/)
+                  };
+                  
 					var quantity, measure, weight, foodMatch, unit;
 					var totalCal, FAT, totalDailyFAT, FASAT, totalDailyFASAT, FATRN, CHOLE, totalDailyCHOLE, NA, totalDailyNA, CHOCDF, totalDailyCHOCDF, FIBTG, totalDailyFIBTG, SUGAR, SUGARadded, PROCNT, totalDailyPROCNT, VITD, totalDailyVITD, CA, totalDailyCA, FE, totalDailyFE, K, totalDailyK, err;
 					var html = '<div class="col-md-12"><table class="table">'+
@@ -146,7 +147,7 @@ $(document).ready(function() {
 			var $msg = $('<div class="col-12"></div>');
 			$msg.append('<section class="performance-facts" id="performance-facts">'+
 						'	<div class="performance-facts__header">'+
-						'		<h1 class="performance-facts__title">Nutrition Facts</h1>'+
+						'		<h2 class="performance-facts__title">Nutrition Facts</h2>'+
 						'		<p><span id="lnumser">0</span> servings per container</p>'+
 						'	</div>'+
 						'	<table class="performance-facts__table">'+
@@ -267,9 +268,13 @@ $(document).ready(function() {
                       }
                     });
                 }
-				$(".nutr-result").append(html);
-              	$(".nutrition-facts-label").append($msg);
-				$(".err-result").append(err);
+				$(".nutrition-result").append(html);
+              	$(".nutrition-result-label").append($msg);
+                $(".err-result").append(err);
+
+                $('.loading-area').css('display', 'none');
+				$('.content-area').css('display', 'block');  
+                
               
 			},
 			error: function () {
@@ -277,7 +282,7 @@ $(document).ready(function() {
               	err = '<span class="addition-e">We had a problem analysing this. Please check the ingredient spelling or if you have entered a quantities for the ingredients.</span>';
               	$(".err-result").append(err);
 
-				// $('.loading-area').css('display', 'none');
+				$('.loading-area').css('display', 'none');
 				$('.content-area').css('display', 'block');        
 			}        
 		});	
