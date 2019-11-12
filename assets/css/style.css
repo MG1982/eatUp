@@ -91,6 +91,7 @@ position:absolute;
   color: rgb(0, 0, 0);
   transition: .5s;
   
+
 }
 
 .btn-primary:before {
@@ -137,6 +138,54 @@ img:hover {
   border-radius: 3px;
 }
 
+=======
+}
+
+.btn-primary:before {
+  content: '';
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: #53e08e;
+  transition: rgb(55, 224, 154);
+  transform: scale(.9);
+  z-index: -1;
+}
+
+.btn-primary:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #4cf0ac;
+  filter: blur(15px);
+}
+
+.btn-primary:hover {
+  color: #1f2422;
+  border:1px solid black;
+  box-shadow: 0 0 15px #198f8f;
+  text-shadow: 0 0 15px #00c5d3;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.options {
+  margin: 20px;
+}
+
+
+.options:hover {
+  cursor: pointer;
+}
+.col {
+  margin: 10px;
+  border: solid 1px rgb(179, 175, 175);
+  border-radius: 3px;
+}
+
+
 .title {
   font-family: "Oswald", sans-serif;
   margin: 5px;
@@ -164,6 +213,7 @@ a {
   font-size: 20px;
   
 }
+
 
 /* Nutrition Table styling */
 .performance-facts__header {
@@ -199,6 +249,7 @@ a {
 .performance-facts__table .thick-row th, .performance-facts__table--small .thick-row th, .performance-facts__table--grid .thick-row th, .performance-facts__table .thick-row td, .performance-facts__table--small .thick-row td, .performance-facts__table--grid .thick-row td {
   border-top-width: 5px;
 }
+
 
 
 
