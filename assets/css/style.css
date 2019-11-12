@@ -119,7 +119,6 @@ position:absolute;
   text-shadow: 0 0 15px #00c5d3;
 }
 
-
 img:hover {
   cursor: pointer;
 }
@@ -146,4 +145,43 @@ img:hover {
 
 .container {
   margin-bottom: 30px;
+}
+
+#start-over {
+ 
+  font-size: 20px;
+  margin-right: 10px;
+  
+}
+
+#nutrition-analysis {
+  
+  font-size: 20px;
+
+}
+
+a {
+  font-size: 20px;
+  
+}
+
+
+@media only screen and (max-width: 480px) {
+
+  * {
+    font-size: 0.8rem;
+}
+
+.timer {
+  font-size: 2rem;
+}
+
+span {
+  font-size:2rem;
+}
+
+a {
+  font-size:2rem;
+}
+
 }
