@@ -97,6 +97,21 @@ $(document).ready(function () {
         .addClass(dish.source_url);
     }
   });
+  // start over click function
+  $("#start-over-two").on("click", function() {
+    start();
+    clearInterval(timeIntervalID);
+    for (let i = 0; i < 4; i++) {
+      // console.log("1", i);
+      dish = randomdish();
+      //console.log(dish);
+      // console.log("2", i);
+      $("#option" + i)
+        .attr({ src: dish.image_url, data: dish.title })
+        .addClass(dish.source_url);
+      // console.log("3", i);
+    }
+  });
 
   // Modal click functions
   $("#first-option").on("shown.bs.modal", function () {
@@ -104,9 +119,23 @@ $(document).ready(function () {
     $("#results").hide();
 
     // END CHOICE (RECIPE)
-    $(".recipe").on("click", function () {
+
+    $(".recipe").on("click", function() {
+      // console.log(this);
+      // console.log("recipe selected click works!");
+      $("#recipe-result").show();
+      $("#nutrition-result").hide();
       $("#first-option").modal("hide");
       $("#second-option").modal("show");
+    });
+
+    $(".nut").on("click", function() {
+      // console.log(this);
+      console.log("nutrition table selected click works!");
+      $("#recipe-result").hide();
+      $("#nutrition-result").show();
+      $("#first-option").modal("hide");
+      $("#results").show();
     });
 
     // END CHOICE (RESTAURANT) COMING SOON...
