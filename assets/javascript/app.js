@@ -38,7 +38,7 @@ $(document).ready(function () {
     var dish = "";
 
     for (let i = 0; i < 4; i++) {
-      dish = randomdish();
+      dish = randomDish();
       $("#option" + i)
         .attr({ src: dish.image_url, data: dish.title })
         .addClass(dish.source_url);
@@ -46,10 +46,10 @@ $(document).ready(function () {
   });
 
   //To pick a dish randomly
-  function randomdish() {
+  function randomDish() {
     var randomnum = Math.floor(Math.random() * 29);
-    randomdish2 = recipes[randomnum];
-    return randomdish2;
+    randomDish2 = recipes[randomnum];
+    return randomDish2;
   }
 
   // resets lots of stuff
@@ -91,19 +91,19 @@ $(document).ready(function () {
     start();
     clearInterval(timeIntervalID);
     for (let i = 0; i < 4; i++) {
-      dish = randomdish();
+      dish = randomDish();
       $("#option" + i)
         .attr({ src: dish.image_url, data: dish.title })
         .addClass(dish.source_url);
     }
   });
   // start over click function
-  $("#start-over-two").on("click", function() {
+  $("#start-over-two").on("click", function () {
     start();
     clearInterval(timeIntervalID);
     for (let i = 0; i < 4; i++) {
       // console.log("1", i);
-      dish = randomdish();
+      dish = randomDish();
       //console.log(dish);
       // console.log("2", i);
       $("#option" + i)
@@ -120,7 +120,7 @@ $(document).ready(function () {
 
     // END CHOICE (RECIPE)
 
-    $(".recipe").on("click", function() {
+    $(".recipe").on("click", function () {
       // console.log(this);
       // console.log("recipe selected click works!");
       $("#recipe-result").show();
@@ -129,7 +129,7 @@ $(document).ready(function () {
       $("#second-option").modal("show");
     });
 
-    $(".nut").on("click", function() {
+    $(".nut").on("click", function () {
       // console.log(this);
       console.log("nutrition table selected click works!");
       $("#recipe-result").hide();
@@ -167,12 +167,12 @@ $(document).ready(function () {
         imgid = imgid.replace("option", "");
         for (i = 4; i < 8; i++) {
           var randomnum = Math.floor(Math.random() * 29);
-          var randomdish = r.recipes[randomnum];
+          var randomDish = r.recipes[randomnum];
           if (i !== parseInt(imgid)) {
-            var imgurl = randomdish.image_url;
+            var imgurl = randomDish.image_url;
             $('img[id="option' + i + '"]')
-              .attr({ src: imgurl, data: randomdish.title })
-              .addClass(randomdish.source_url);
+              .attr({ src: imgurl, data: randomDish.title })
+              .addClass(randomDish.source_url);
           }
         }
       });
@@ -189,12 +189,12 @@ $(document).ready(function () {
         imgid = imgid.replace("option", "");
         for (i = 4; i < 8; i++) {
           var randomnum = Math.floor(Math.random() * 29);
-          var randomdish = r.recipes[randomnum];
+          var randomDish = r.recipes[randomnum];
           if (i !== parseInt(imgid)) {
-            var imgurl = randomdish.image_url;
+            var imgurl = randomDish.image_url;
             $('img[id="option' + i + '"]')
-              .attr({ src: imgurl, data: randomdish.title })
-              .addClass(randomdish.source_url);
+              .attr({ src: imgurl, data: randomDish.title })
+              .addClass(randomDish.source_url);
           }
         }
       });
@@ -220,12 +220,12 @@ $(document).ready(function () {
       imgid = imgid.replace("option", "");
       for (i = 4; i < 8; i++) {
         var randomnum = Math.floor(Math.random() * 29);
-        var randomdish = r.recipes[randomnum];
+        var randomDish = r.recipes[randomnum];
         if (i !== parseInt(imgid)) {
-          var imgurl = randomdish.image_url;
+          var imgurl = randomDish.image_url;
           $('img[id="option' + i + '"]')
-            .attr({ src: imgurl, data: randomdish.title })
-            .addClass(randomdish.source_url);
+            .attr({ src: imgurl, data: randomDish.title })
+            .addClass(randomDish.source_url);
         }
       }
     });
