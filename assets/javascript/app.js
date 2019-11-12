@@ -207,8 +207,6 @@ $(document).ready(function () {
 
   $("#second-option").on("hidden.bs.modal", function () {
     $(".first-choice").on("click", function () {
-  $("#second-option").on("hidden.bs.modal", function() {
-    $(".first-choice").on("click", function() {
       // SWITCH CLASSES AND APPEND TO SECOND CHOICE MODAL
       $(this)
         .attr("id", "user-choice-img")
