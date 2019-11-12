@@ -22,7 +22,7 @@ function startTimer(secs, callback) {
 $(document).ready(function () {
   start();
 
-  let apiKey = "5976ff133bad5c45ded53f0db377a2c2";
+  let apiKey = "f7fa810975b0eab355eea6ac33eed813";
   let queryList = ["chicken", "lamb", "pork", "pasta", "fish", "beef", "rice", "noodles", "cheese", "eggs", "nuts", "tofu"]
   let query = queryList[Math.floor(Math.random() * (queryList.length - 1))]
   var queryURL =
